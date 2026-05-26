@@ -1,2 +1,2 @@
-# genshin-randomteam-
+# genshin-randomteam
 原神ランダムチーム編成です
