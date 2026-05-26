@@ -623,7 +623,7 @@ const characters = [
   {
     id: "lynette",
     name: "リネット",
-    rarity: 5,
+    rarity: 4,
     element: "風",
     weapon: "片手剣",
     image: "images/Lynette.png"
