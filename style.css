@@ -195,4 +195,19 @@ button {
 
 }
 
+@media (max-width: 768px) {
+
+  .element-icon {
+
+    width: 16px;
+    height: 16px;
+
+    top: 2px;
+    left: 2px;
+
+    border-width: 1px;
+    padding: 1px;
+  }
+}
+
 
