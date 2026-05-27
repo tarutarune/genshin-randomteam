@@ -219,31 +219,42 @@ button {
 @keyframes revealCard {
 
   0% {
+
     transform:
-      perspective(600px)
-      rotateY(90deg)
-      scale(0.8);
+      perspective(800px)
+      rotateY(0deg)
+      scale(0.6);
 
     opacity: 0;
   }
 
-  50% {
+  70% {
 
     transform:
-      perspective(600px)
-      rotateY(-20deg)
-      scale(1.05);
+      perspective(800px)
+      rotateY(900deg)
+      scale(1.08);
+
+    opacity: 1;
   }
 
   100% {
 
     transform:
-      perspective(600px)
-      rotateY(0deg)
+      perspective(800px)
+      rotateY(1080deg)
       scale(1);
-
-    opacity: 1;
   }
+}
+
+.reveal-animation {
+
+  animation:
+    revealCard 0.9s ease-out;
+
+  transform-style: preserve-3d;
+
+  backface-visibility: hidden;
 }
 
 .reveal-animation {
