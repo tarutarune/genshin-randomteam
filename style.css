@@ -265,3 +265,45 @@ button {
     transform,
     opacity;
 }
+
+
+
+.tab-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.tab-button {
+
+  background: #555;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 10px 20px;
+
+  font-size: 18px;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.tab-button.active {
+
+  background: #e0b14b;
+
+  color: #222;
+
+  transform: scale(1.05);
+}
