@@ -68,6 +68,8 @@ function renderCharacters() {
     }).join("");
 }
 
+
+
 function randomTeam() {
 
   if (selectedCharacters.length === 0) {
@@ -83,22 +85,31 @@ function randomTeam() {
 
   const team = shuffled.slice(0, 8);
 
-  let resultHTML = "";
+  document.getElementById("result").innerHTML =
+    '<div class="empty-slot"></div>'.repeat(8);
+
+  const slots =
+    document.querySelectorAll("#result .empty-slot");
 
   for (let i = 0; i < 8; i++) {
 
-    const characterId = team[i];
+    setTimeout(() => {
 
-    if (characterId) {
+      const characterId = team[i];
+
+      if (!characterId) return;
 
       const character =
-        characters.find(c => c.id === characterId);
+        characters.find(
+          c => c.id === characterId
+        );
 
-      resultHTML += `
+      slots[i].outerHTML = `
         <div
           class="
             character-card
             rarity-${character.rarity}
+            reveal-animation
           "
         >
 
@@ -107,24 +118,20 @@ function randomTeam() {
             alt="${character.name}"
             class="character-image"
           >
-  <img
-  src="${elementIcons[character.element]}"
-  class="element-icon"
->
+
+          <img
+            src="${elementIcons[character.element]}"
+            class="element-icon"
+          >
+
         </div>
       `;
 
-    } else {
-
-      resultHTML += `
-        <div class="empty-slot"></div>
-      `;
-    }
+    }, i * 350);
   }
-
-  document.getElementById("result").innerHTML =
-    resultHTML;
 }
+
+
 
 renderCharacters();
 
