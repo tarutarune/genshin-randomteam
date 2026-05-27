@@ -181,3 +181,13 @@ function showTab(tab) {
     historyButton.classList.add("active");
   }
 }
+
+
+function saveTeam() {
+
+  if (currentTeam.length === 0) return;
+
+  teamHistory.push([...currentTeam]);
+
+  renderHistory();
+}
