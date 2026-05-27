@@ -6,7 +6,8 @@ const elementIcons = {
   "氷": "icons/cryo.png",
   "草": "icons/dendro.png",
   "岩": "icons/geo.png",
-  "風": "icons/anemo.png"
+  "風": "icons/anemo.png",
+  "全元素": "icons/anemo.png"
 };
 
 let selectedCharacters =
@@ -68,8 +69,6 @@ function renderCharacters() {
     }).join("");
 }
 
-
-
 function randomTeam() {
 
   if (selectedCharacters.length === 0) {
@@ -117,21 +116,19 @@ function randomTeam() {
             src="${character.image}"
             alt="${character.name}"
             class="character-image"
-          >
+          />
 
           <img
             src="${elementIcons[character.element]}"
             class="element-icon"
-          >
+          />
 
         </div>
       `;
 
-    }, i * 350);
+    }, i * 220);
   }
 }
-
-
 
 renderCharacters();
 
