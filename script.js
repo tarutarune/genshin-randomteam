@@ -137,3 +137,41 @@ document
 
 document.getElementById("result").innerHTML =
   '<div class="empty-slot"></div>'.repeat(8);
+
+
+
+function showTab(tab) {
+
+  const generatorTab =
+    document.getElementById("generator-tab");
+
+  const historyTab =
+    document.getElementById("history-tab");
+
+  const generatorButton =
+    document.getElementById("generator-button");
+
+  const historyButton =
+    document.getElementById("history-button");
+
+  if (tab === "generator") {
+
+    generatorTab.style.display = "block";
+
+    historyTab.style.display = "none";
+
+    generatorButton.classList.add("active");
+
+    historyButton.classList.remove("active");
+
+  } else {
+
+    generatorTab.style.display = "none";
+
+    historyTab.style.display = "block";
+
+    generatorButton.classList.remove("active");
+
+    historyButton.classList.add("active");
+  }
+}
