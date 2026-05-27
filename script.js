@@ -12,6 +12,10 @@ const elementIcons = {
 let selectedCharacters =
   characters.map(character => character.id);
 
+let currentTeam = [];
+
+let teamHistory = [];
+
 function toggleCharacter(characterId) {
 
   if (selectedCharacters.includes(characterId)) {
@@ -82,6 +86,8 @@ function randomTeam() {
     .sort(() => 0.5 - Math.random());
 
   const team = shuffled.slice(0, 8);
+
+  currentTeam = team;
 
   document.getElementById("result").innerHTML =
     '<div class="empty-slot"></div>'.repeat(8);
