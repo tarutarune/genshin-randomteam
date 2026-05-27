@@ -189,9 +189,28 @@ function saveTeam() {
 
   teamHistory.push([...currentTeam]);
 
-  renderHistory();
-}
 
+
+  selectedCharacters =
+    selectedCharacters.filter(
+      id => !currentTeam.includes(id)
+    );
+
+
+
+  currentTeam = [];
+
+
+
+  renderCharacters();
+
+  renderHistory();
+
+
+
+  document.getElementById("result").innerHTML =
+    '<div class="empty-slot"></div>'.repeat(8);
+}
 
 function renderHistory() {
 
