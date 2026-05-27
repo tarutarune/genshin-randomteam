@@ -218,13 +218,21 @@ button {
 
 @media (max-width: 768px) {
 
-  .history-grid {
+.history-grid {
 
-    grid-template-columns:
-      repeat(4, 72px);
+  display: grid;
 
-    gap: 8px;
-  }
+  grid-template-columns:
+    repeat(4, 100px);
+
+  justify-content: center;
+
+  row-gap: 12px;
+
+  column-gap: 8px;
+
+  margin-top: 12px;
+}
 }
 
 
@@ -367,14 +375,10 @@ button {
 
 .history-grid {
 
-  display: grid;
-
   grid-template-columns:
-    repeat(4, 100px);
+    repeat(4, 72px);
 
-  justify-content: center;
+  row-gap: 8px;
 
-  gap: 12px;
-
-  margin-top: 12px;
+  column-gap: 8px;
 }
