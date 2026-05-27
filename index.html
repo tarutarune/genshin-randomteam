@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>原神ランダム編成</title> 
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <title>
+    原神ランダム編成
+  </title>
+
 </head>
 
 <body>
@@ -13,65 +27,87 @@
 
   <div class="tab-buttons">
 
-  <button
-    class="tab-button active"
-    onclick="showTab('generator')"
-    id="generator-button"
-  >
-    編成する
-  </button>
+    <button
+      class="tab-button active"
+      onclick="showTab('generator')"
+      id="generator-button"
+    >
+      編成する
+    </button>
 
-  <button
-    class="tab-button"
-    onclick="showTab('history')"
-    id="history-button"
-  >
-    挑戦履歴挑戦履歴
-<span id="history-count">(0)</span>
-  </button>
+    <button
+      class="tab-button"
+      onclick="showTab('history')"
+      id="history-button"
+    >
 
-</div>
+      挑戦履歴
 
-  <div id="result"></div>
+      <span id="history-count">
+        (0)
+      </span>
 
-  
-  <div id="generator-tab">
-    
-<div class="button-area">
-  <button id="random-button">
-    ランダム編成！
-  </button>
-
-  <button id="save-button">
-
-  保存
-
-</button>
-</div>
-
-
-  <h2>現在実装キャラ</h2>
-
-<div id="character-list"></div>
-<script src="characters.js"></script>
+    </button>
 
   </div>
+
+
+
+  <div id="generator-tab">
+
+    <div class="button-area">
+
+      <button id="random-button">
+
+        ランダム編成！
+
+      </button>
+
+      <button id="save-button">
+
+        保存
+
+      </button>
+
+    </div>
+
+
+
+    <div id="result"></div>
+
+
+
+    <h2>現在実装キャラ</h2>
+
+    <div id="character-list"></div>
+
+  </div>
+
+
 
   <div
-  id="history-tab"
-  style="display: none;"
->
+    id="history-tab"
+    style="display: none;"
+  >
 
-  <h2>挑戦履歴</h2>
+    <h2>挑戦履歴</h2>
 
-  <div id="history-list">
+    <div id="history-list">
 
-    <p>まだ履歴がありません</p>
+      <p>
+        まだ履歴がありません
+      </p>
+
+    </div>
 
   </div>
 
-</div>
-  
-<script src="script.js"></script>
+
+
+  <script src="characters.js"></script>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
