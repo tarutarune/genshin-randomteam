@@ -255,3 +255,7 @@ function renderHistory() {
       `;
     }).join("");
 }
+
+document
+  .getElementById("save-button")
+  .addEventListener("click", saveTeam);
