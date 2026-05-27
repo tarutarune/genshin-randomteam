@@ -346,3 +346,24 @@ button {
     font-size: 16px;
   }
 }
+
+
+
+.history-team {
+
+  margin-bottom: 40px;
+}
+
+.history-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 100px);
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 12px;
+}
