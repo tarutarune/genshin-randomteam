@@ -235,8 +235,8 @@ button {
     transform:
       perspective(800px)
       rotateY(12deg)
-      scaleX(1.03)
-      scaleY(1.02);
+      scaleX(1)
+      scaleY(1);
 
     opacity: 1;
   }
