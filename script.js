@@ -278,6 +278,10 @@ function renderHistory() {
         </div>
       `;
     }).join("");
+
+  document.getElementById("history-count")
+  .textContent =
+    `(${teamHistory.length})`;
 }
 
 document
