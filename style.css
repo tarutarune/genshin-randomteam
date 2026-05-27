@@ -329,3 +329,14 @@ button {
 
   color: white;
 }
+
+
+#generator-tab,
+#history-tab {
+
+  background: #3b3b3b;
+
+  border-radius: 16px;
+
+  padding: 24px;
+}
