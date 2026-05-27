@@ -222,27 +222,35 @@ button {
   0% {
 
     transform:
-      perspective(600px)
-      rotateY(-180deg)
-      scale(0.9);
+      perspective(800px)
+      rotateY(-90deg)
+      scale(0.96);
 
     opacity: 0;
   }
 
-  60% {
+  55% {
 
     transform:
-      perspective(600px)
-      rotateY(20deg)
-      scale(1.03);
+      perspective(800px)
+      rotateY(12deg)
+      scale(1.02);
 
     opacity: 1;
+  }
+
+  75% {
+
+    transform:
+      perspective(800px)
+      rotateY(-4deg)
+      scale(0.995);
   }
 
   100% {
 
     transform:
-      perspective(600px)
+      perspective(800px)
       rotateY(0deg)
       scale(1);
   }
@@ -251,12 +259,12 @@ button {
 .reveal-animation {
 
   animation:
-    revealCard 0.7s
-    cubic-bezier(0.22, 1, 0.36, 1);
-
-  backface-visibility: hidden;
+    revealCard 0.95s
+    cubic-bezier(0.16, 1, 0.3, 1);
 
   transform-style: preserve-3d;
+
+  backface-visibility: hidden;
 
   will-change:
     transform,
