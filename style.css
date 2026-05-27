@@ -229,22 +229,14 @@ button {
     opacity: 0;
   }
 
-  55% {
+  60% {
 
     transform:
       perspective(800px)
-      rotateY(12deg)
+      rotateY(10deg)
       scale(1.02);
 
     opacity: 1;
-  }
-
-  75% {
-
-    transform:
-      perspective(800px)
-      rotateY(-4deg)
-      scale(1);
   }
 
   100% {
@@ -259,7 +251,7 @@ button {
 .reveal-animation {
 
   animation:
-    revealCard 0.95s
+    revealCard 0.9s
     cubic-bezier(0.16, 1, 0.3, 1);
 
   transform-style: preserve-3d;
