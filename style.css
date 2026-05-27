@@ -10,7 +10,7 @@ body {
   background: #111111;
   padding: 40px;
   margin: auto;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 h1,
@@ -43,23 +43,32 @@ button {
 }
 
 #result {
+
   display: grid;
+
   grid-template-columns:
     repeat(auto-fit, minmax(140px, 140px));
 
   justify-content: center;
+
   gap: 12px;
+
   margin-top: 30px;
 }
 
 #character-list {
+
   display: grid;
+
   grid-template-columns:
-    repeat(auto-fit, minmax(120px, 120px)); 
+    repeat(auto-fit, minmax(120px, 120px));
 
   justify-content: center;
+
   row-gap: 18px;
-　column-gap:8px;
+
+  column-gap: 8px;
+
   margin-top: 20px;
 }
 
@@ -67,19 +76,28 @@ button {
 
   width: 100px;
   height: 100px;
+
   border-radius: 10px;
+
   overflow: hidden;
-  padding:0;
+
+  padding: 0;
+
   position: relative;
+
   justify-content: center;
+
   align-items: center;
+
   transition:
     filter 0.2s,
     transform 0.2s;
 }
 
 .character-card.selected {
+
   filter: brightness(1);
+
   transform: scale(1.05);
 }
 
@@ -93,14 +111,19 @@ button {
 }
 
 .character-image {
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
 }
 
 .character-card p {
+
   margin-top: 10px;
+
   font-size: 18px;
 }
 
@@ -118,7 +141,7 @@ button {
 
   border-radius: 50%;
 
-  background: rgba(0, 0,0, 0.45);
+  background: rgba(0, 0, 0, 0.45);
 
   border: 2px solid rgba(255, 255, 255, 0.9);
 
@@ -168,10 +191,6 @@ button {
     width: 72px;
     height: 72px;
   }
-}
-
-
-@media (max-width: 768px) {
 
   #character-list {
 
@@ -179,17 +198,19 @@ button {
       repeat(4, 72px);
 
     row-gap: 14px;
+
     column-gap: 14px;
   }
-  h1{
+
+  h1 {
+
     font-size: 28px;
   }
-  h2{
+
+  h2 {
+
     font-size: 22px;
   }
-
-}
-@media (max-width: 768px) {
 
   #result {
 
@@ -198,10 +219,6 @@ button {
 
     gap: 8px;
   }
-
-}
-
-@media (max-width: 768px) {
 
   .element-icon {
 
@@ -212,29 +229,20 @@ button {
     left: 2px;
 
     border-width: 1px;
+
     padding: 1px;
   }
+
+  .tab-buttons {
+
+    gap: 28px;
+  }
+
+  .tab-button {
+
+    font-size: 16px;
+  }
 }
-
-@media (max-width: 768px) {
-
-.history-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 100px);
-
-  justify-content: center;
-
-  row-gap: 12px;
-
-  column-gap: 8px;
-
-  margin-top: 12px;
-}
-}
-
 
 @keyframes revealCard {
 
@@ -284,7 +292,6 @@ button {
     transform,
     opacity;
 }
-
 
 .tab-buttons {
 
@@ -352,22 +359,6 @@ button {
   transform: scaleX(1);
 }
 
-
-@media (max-width: 768px) {
-
-  .tab-buttons {
-
-    gap: 28px;
-  }
-
-  .tab-button {
-
-    font-size: 16px;
-  }
-}
-
-
-
 .history-team {
 
   margin-bottom: 40px;
@@ -375,10 +366,16 @@ button {
 
 .history-grid {
 
+  display: grid;
+
   grid-template-columns:
     repeat(4, 72px);
+
+  justify-content: center;
 
   row-gap: 8px;
 
   column-gap: 8px;
+
+  margin-top: 12px;
 }
