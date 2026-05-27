@@ -234,7 +234,7 @@ button {
 
     transform:
       perspective(800px)
-      rotateY(900deg)
+      rotateY(400deg)
       scale(1.05);
 
     opacity: 1;
@@ -244,7 +244,7 @@ button {
 
     transform:
       perspective(800px)
-      rotateY(1080deg)
+      rotateY(720deg)
       scale(1);
   }
 }
