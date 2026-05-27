@@ -192,9 +192,12 @@ function saveTeam() {
 
 
   selectedCharacters =
-    selectedCharacters.filter(
-      id => !currentTeam.includes(id)
-    );
+  selectedCharacters.filter(
+    id =>
+      !currentTeam.some(
+        currentId => currentId === id
+      )
+  );
 
 
 
@@ -244,6 +247,8 @@ function renderHistory() {
                 characters.find(
                   c => c.id === characterId
                 );
+
+              if (!character) return "";
 
               return `
 
