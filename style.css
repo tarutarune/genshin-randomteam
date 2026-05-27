@@ -216,6 +216,17 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+
+  .history-grid {
+
+    grid-template-columns:
+      repeat(4, 72px);
+
+    gap: 8px;
+  }
+}
+
 
 @keyframes revealCard {
 
