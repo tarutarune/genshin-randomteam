@@ -224,7 +224,8 @@ button {
     transform:
       perspective(800px)
       rotateY(-90deg)
-      scale(0.96);
+      scaleX(0.7)
+      scaleY(0.96);
 
     opacity: 0;
   }
@@ -233,8 +234,9 @@ button {
 
     transform:
       perspective(800px)
-      rotateY(10deg)
-      scale(1.02);
+      rotateY(12deg)
+      scaleX(1.03)
+      scaleY(1.02);
 
     opacity: 1;
   }
@@ -244,15 +246,16 @@ button {
     transform:
       perspective(800px)
       rotateY(0deg)
-      scale(1);
+      scaleX(1)
+      scaleY(1);
   }
 }
 
 .reveal-animation {
 
   animation:
-    revealCard 0.9s
-    cubic-bezier(0.16, 1, 0.3, 1);
+    revealCard 0.8s
+    cubic-bezier(0.19, 1, 0.22, 1);
 
   transform-style: preserve-3d;
 
