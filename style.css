@@ -254,4 +254,6 @@ button {
   transform-style: preserve-3d;
 
   backface-visibility: hidden;
+
+  transform-origin: center;
 }
