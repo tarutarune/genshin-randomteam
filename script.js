@@ -125,7 +125,7 @@ function randomTeam() {
         </div>
       `;
 
-    }, i * 220);
+    }, i * 350);
   }
 }
 
