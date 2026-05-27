@@ -216,6 +216,8 @@ button {
   }
 }
 
+
+
 @keyframes revealCard {
 
   0% {
@@ -223,7 +225,7 @@ button {
     transform:
       perspective(800px)
       rotateY(0deg)
-      scale(0.6);
+      scale(0.92);
 
     opacity: 0;
   }
@@ -233,7 +235,7 @@ button {
     transform:
       perspective(800px)
       rotateY(900deg)
-      scale(1.08);
+      scale(1.05);
 
     opacity: 1;
   }
@@ -246,6 +248,8 @@ button {
       scale(1);
   }
 }
+
+
 
 .reveal-animation {
 
