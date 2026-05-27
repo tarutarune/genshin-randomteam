@@ -274,7 +274,7 @@ button {
 
   justify-content: center;
 
-  gap: 12px;
+  gap: 0;
 
   margin-top: 24px;
   margin-bottom: 24px;
@@ -282,28 +282,50 @@ button {
 
 .tab-button {
 
-  background: #555;
+  background: #444;
 
-  color: white;
+  color: #ccc;
 
   border: none;
 
-  border-radius: 12px;
-
-  padding: 10px 20px;
+  padding:
+    14px 28px;
 
   font-size: 18px;
 
+  border-radius:
+    16px 16px 0 0;
+
+  position: relative;
+
   transition:
-    background 0.2s,
-    transform 0.2s;
+    background 0.25s,
+    color 0.25s,
+    transform 0.25s;
+
+  margin: 0;
 }
 
 .tab-button.active {
 
-  background: #e0b14b;
+  background:
+    linear-gradient(
+      180deg,
+      #e0b14b 0%,
+      #c88d2d 100%
+    );
 
   color: #222;
 
-  transform: scale(1.05);
+  z-index: 2;
+
+  transform:
+    translateY(2px);
+}
+
+.tab-button:not(.active):hover {
+
+  background: #555;
+
+  color: white;
 }
