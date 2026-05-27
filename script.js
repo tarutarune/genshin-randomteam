@@ -191,3 +191,67 @@ function saveTeam() {
 
   renderHistory();
 }
+
+
+function renderHistory() {
+
+  const historyList =
+    document.getElementById("history-list");
+
+  if (teamHistory.length === 0) {
+
+    historyList.innerHTML =
+      "<p>まだ履歴がありません</p>";
+
+    return;
+  }
+
+  historyList.innerHTML =
+    teamHistory.map((team, index) => {
+
+      return `
+
+        <div class="history-team">
+
+          <h3>
+            ${index + 1}組目
+          </h3>
+
+          <div class="history-grid">
+
+            ${team.map(characterId => {
+
+              const character =
+                characters.find(
+                  c => c.id === characterId
+                );
+
+              return `
+
+                <div
+                  class="
+                    character-card
+                    rarity-${character.rarity}
+                  "
+                >
+
+                  <img
+                    src="${character.image}"
+                    class="character-image"
+                  >
+
+                  <img
+                    src="${elementIcons[character.element]}"
+                    class="element-icon"
+                  >
+
+                </div>
+              `;
+            }).join("")}
+
+          </div>
+
+        </div>
+      `;
+    }).join("");
+}
