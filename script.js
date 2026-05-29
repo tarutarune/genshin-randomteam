@@ -79,6 +79,9 @@ function randomTeam() {
     selectedCharacters.length < 8
   ) {
 
+document.querySelector(".button-area")
+  .style.display = "none";
+
     document.getElementById("result").innerHTML = `
       <div class="reset-message">
 
