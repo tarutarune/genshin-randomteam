@@ -61,7 +61,7 @@ button {
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(100px, 100px));
+    repeat(auto-fit, minmax(110px, 110px));
 
   justify-content: center;
 
