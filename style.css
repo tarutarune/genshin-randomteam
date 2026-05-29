@@ -369,15 +369,32 @@ button {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 72px);
+    repeat(8, 72px);
 
   justify-content: center;
 
-  row-gap: 8px;
-
-  column-gap: 8px;
+  gap: 8px;
 
   margin-top: 12px;
+}
+
+.history-grid .character-card {
+
+  width: 64px;
+  height: 64px;
+}
+
+@media (max-width: 768px) {
+
+  .history-grid {
+
+    grid-template-columns:
+      repeat(4, 72px);
+
+    row-gap: 8px;
+
+    column-gap: 8px;
+  }
 }
 
 
