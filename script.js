@@ -74,33 +74,30 @@ function renderCharacters() {
 
 function randomTeam() {
 
-  if (selectedCharacters.length < 8) {
+  if (
+    selectedCharacters.length > 0 &&
+    selectedCharacters.length < 8
+  ) {
 
-    selectedCharacters =
-      characters.map(
-        character => character.id
-      );
+    document.getElementById("result").innerHTML = `
+      <div class="reset-message">
 
-    renderCharacters();
+        <p>
+          残り${selectedCharacters.length}人です
+        </p>
 
-    const message =
-      document.getElementById(
-        "message-area"
-      );
+        <p>
+          全員から再抽選しますか？
+        </p>
 
-    if (message) {
+        <button onclick="resetAndRandom()">
+          全員から再抽選
+        </button>
 
-      message.textContent =
-        "残りキャラが不足したため、全キャラを抽選対象に戻しました";
+      </div>
+    `;
 
-      message.classList.add("show");
-
-      setTimeout(() => {
-
-        message.classList.remove("show");
-
-      }, 3000);
-    }
+    return;
   }
 
   if (selectedCharacters.length === 0) {
@@ -389,3 +386,20 @@ function setStars(teamIndex, stars) {
 }
 
 window.setStars = setStars;
+
+
+
+function resetAndRandom() {
+
+  selectedCharacters =
+    characters.map(
+      character => character.id
+    );
+
+  renderCharacters();
+
+  randomTeam();
+}
+
+window.resetAndRandom =
+  resetAndRandom;
