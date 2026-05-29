@@ -120,8 +120,10 @@ if (
     '<div class="empty-slot"></div>'
       .repeat(needCount);
 
-  document.getElementById("result").innerHTML =
-  remainCards + emptySlots;
+ document.getElementById("result").innerHTML =
+  remainCards +
+  emptySlots +
+  "<h2>テスト</h2>";
   
   document.getElementById("message-area")
   .innerHTML = "テスト";
