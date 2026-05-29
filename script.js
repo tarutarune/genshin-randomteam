@@ -209,15 +209,14 @@ function saveTeam() {
 
   renderHistory();
 
-  const historyButton =
-  document.getElementById("history-button");
+ const historyCount =
+  document.getElementById("history-count");
 
-historyButton.classList.remove("history-pulse");
+historyCount.classList.remove("history-pulse");
 
-void historyButton.offsetWidth;
+void historyCount.offsetWidth;
 
-historyButton.classList.add("history-pulse");
-
+historyCount.classList.add("history-pulse");
 
 
 
