@@ -243,7 +243,9 @@ function renderHistory() {
   }
 
   historyList.innerHTML =
-    teamHistory.map((team, index) => {
+    teamHistory.map((entry, index) => {
+      
+      const team = entry.team;
 
       return `
 
