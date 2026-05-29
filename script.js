@@ -209,6 +209,18 @@ function saveTeam() {
 
   renderHistory();
 
+  const historyButton =
+  document.getElementById("history-button");
+
+historyButton.classList.remove("history-pulse");
+
+void historyButton.offsetWidth;
+
+historyButton.classList.add("history-pulse");
+
+
+
+
 
 
   document.getElementById("result").innerHTML =
@@ -283,16 +295,6 @@ function renderHistory() {
   .textContent =
     `(${teamHistory.length})`;
 }
-
-const historyButton =
-  document.getElementById("history-button");
-
-historyButton.classList.remove("history-pulse");
-
-void historyButton.offsetWidth;
-
-historyButton.classList.add("history-pulse");
-
 
 
 document
