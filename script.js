@@ -78,13 +78,29 @@ function randomTeam() {
 
   if (selectedCharacters.length < 8) {
 
-    selectedCharacters =
-      characters.map(
-        character => character.id
-      );
+  selectedCharacters =
+    characters.map(
+      character => character.id
+    );
 
-    renderCharacters();
-  }
+  renderCharacters();
+
+  const message =
+    document.getElementById(
+      "message-area"
+    );
+
+  message.textContent =
+    "残りキャラが不足したため、全キャラを抽選対象に戻しました";
+
+  message.classList.add("show");
+
+  setTimeout(() => {
+
+    message.classList.remove("show");
+
+  }, 3000);
+}
 
   if (selectedCharacters.length === 0) {
 
