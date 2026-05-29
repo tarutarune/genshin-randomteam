@@ -73,8 +73,6 @@ function renderCharacters() {
 }
 
 function randomTeam() {
-  
-  function randomTeam() {
 
   if (selectedCharacters.length === 0) {
 
@@ -83,8 +81,6 @@ function randomTeam() {
 
     return;
   }
-
-
 
   const shuffled = [...selectedCharacters]
     .sort(() => 0.5 - Math.random());
