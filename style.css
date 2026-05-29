@@ -550,3 +550,21 @@ button {
 
   font-size: 18px;
 }
+
+#message-area {
+
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+
+  margin: 20px 0;
+}
+
+.fill-team-button {
+
+  padding: 12px 24px;
+
+  font-size: 18px;
+}
