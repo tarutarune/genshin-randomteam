@@ -74,6 +74,35 @@ function renderCharacters() {
 
 function randomTeam() {
 
+  if (selectedCharacters.length < 8) {
+
+    selectedCharacters =
+      characters.map(
+        character => character.id
+      );
+
+    renderCharacters();
+
+    const message =
+      document.getElementById(
+        "message-area"
+      );
+
+    if (message) {
+
+      message.textContent =
+        "残りキャラが不足したため、全キャラを抽選対象に戻しました";
+
+      message.classList.add("show");
+
+      setTimeout(() => {
+
+        message.classList.remove("show");
+
+      }, 3000);
+    }
+  }
+
   if (selectedCharacters.length === 0) {
 
     document.getElementById("result").innerHTML =
