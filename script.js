@@ -343,7 +343,18 @@ document
   
 function setStars(teamIndex, stars) {
 
-  teamHistory[teamIndex].stars = stars;
+  if (
+    teamHistory[teamIndex].stars === stars
+  ) {
+
+    teamHistory[teamIndex].stars =
+      stars - 1;
+
+  } else {
+
+    teamHistory[teamIndex].stars =
+      stars;
+  }
 
   renderHistory();
 }
