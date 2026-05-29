@@ -121,27 +121,17 @@ if (
       .repeat(needCount);
 
   document.getElementById("result").innerHTML =
-    remainCards + emptySlots;
+  remainCards +
+  emptySlots +
+  `
+    <div class="fill-button-area">
+      <button onclick="fillRemainingTeam()">
+        残り${selectedCharacters.length}人＋${needCount}人補充して完成
+      </button>
+    </div>
+  `;
 
-  document.getElementById("message-area")
-    .innerHTML = `
-      <div class="reset-message">
-
-        <p>
-          残り${selectedCharacters.length}人です
-        </p>
-
-        <p>
-          不足する${needCount}人を
-          再抽選しますか？
-        </p>
-
-        <button onclick="fillRemainingTeam()">
-          不足分を補充する
-        </button>
-
-      </div>
-    `;
+  
 
   return;
 }
