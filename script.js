@@ -284,6 +284,17 @@ function renderHistory() {
     `(${teamHistory.length})`;
 }
 
+const historyButton =
+  document.getElementById("history-button");
+
+historyButton.classList.remove("history-pulse");
+
+void historyButton.offsetWidth;
+
+historyButton.classList.add("history-pulse");
+
+
+
 document
   .getElementById("save-button")
   .addEventListener("click", saveTeam);
