@@ -74,34 +74,38 @@ function renderCharacters() {
 
 function randomTeam() {
 
-  if (
-    selectedCharacters.length > 0 &&
-    selectedCharacters.length < 8
-  ) {
+if (
+  selectedCharacters.length > 0 &&
+  selectedCharacters.length < 8
+) {
 
-document.querySelector(".button-area")
-  .style.display = "none";
+  document.querySelector(".button-area")
+    .style.display = "none";
 
-    document.getElementById("result").innerHTML = `
-      <div class="reset-message">
+  const needCount =
+    8 - selectedCharacters.length;
 
-        <p>
-          残り${selectedCharacters.length}人です
-        </p>
+  document.getElementById("result").innerHTML = `
+    <div class="reset-message">
 
-        <p>
-          全員から再抽選しますか？
-        </p>
+      <p>
+        残り${selectedCharacters.length}人です
+      </p>
 
-        <button onclick="resetAndRandom()">
-          全員から再抽選
-        </button>
+      <p>
+        残りの${selectedCharacters.length}人を使用し、
+        不足する${needCount}人を再抽選しますか？
+      </p>
 
-      </div>
-    `;
+      <button onclick="fillRemainingTeam()">
+        不足分を補充する
+      </button>
 
-    return;
-  }
+    </div>
+  `;
+
+  return;
+}
 
   if (selectedCharacters.length === 0) {
 
