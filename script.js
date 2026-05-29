@@ -127,8 +127,9 @@ document.getElementById("message-area")
   .innerHTML = `
     <button
       class="fill-team-button"
+      onclick="fillRemainingTeam()"
     >
-      ボタンテスト
+      残り3人＋5人補充して完成
     </button>
   `;
   
