@@ -125,7 +125,9 @@ if (
 
 document.getElementById("message-area")
   .innerHTML = `
-    <button>
+    <button
+      class="fill-team-button"
+    >
       ボタンテスト
     </button>
   `;
