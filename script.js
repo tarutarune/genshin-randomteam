@@ -392,7 +392,7 @@ const maxStars =
 
 document.getElementById("total-stars")
   .textContent =
-    `合計 ★${totalStars}/${maxStars}`;
+    `合計 ★${totalStars} / ${maxStars}`;
     
     
 }
