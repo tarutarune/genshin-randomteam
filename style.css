@@ -561,6 +561,8 @@ button {
   text-align: center;
 
   margin: 20px 0;
+  
+  opacity: 1;
 }
 
 .fill-team-button {
