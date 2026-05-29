@@ -290,6 +290,23 @@ function renderHistory() {
             }).join("")}
 
           </div>
+          
+          <div class="star-rating">
+
+  ${[1,2,3,4,5,6,7,8,9].map(star => `
+
+    <span
+      class="star ${star <= entry.stars ? 'filled' : ''}"
+      onclick="setStars(${index}, ${star})"
+    >
+
+      ★
+
+    </span>
+
+  `).join("")}
+
+</div>
 
         </div>
       `;
@@ -298,9 +315,34 @@ function renderHistory() {
   document.getElementById("history-count")
   .textContent =
     `(${teamHistory.length})`;
+    
+    
+    
+    const totalStars =
+  teamHistory.reduce(
+    (sum, entry) =>
+      sum + entry.stars,
+    0
+  );
+
+document.getElementById("total-stars")
+  .textContent =
+    `合計 ★${totalStars}`;
+    
+    
 }
 
 
 document
   .getElementById("save-button")
   .addEventListener("click", saveTeam);
+  
+  
+function setStars(teamIndex, stars) {
+
+  teamHistory[teamIndex].stars = stars;
+
+  renderHistory();
+}
+
+window.setStars = setStars;
