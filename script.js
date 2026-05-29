@@ -72,8 +72,6 @@ function renderCharacters() {
     }).join("");
 }
 
-function randomTeam() {
-
 if (
   selectedCharacters.length > 0 &&
   selectedCharacters.length < 8
@@ -85,43 +83,62 @@ if (
   const needCount =
     8 - selectedCharacters.length;
 
-  document.getElementById("result").innerHTML = `
- const remainCards =
-  selectedCharacters.map(characterId => {
+  const remainCards =
+    selectedCharacters.map(characterId => {
 
-    const character =
-      characters.find(
-        c => c.id === characterId
-      );
+      const character =
+        characters.find(
+          c => c.id === characterId
+        );
 
-    return `
-      <div
-        class="
-          character-card
-          rarity-${character.rarity}
-        "
-      >
-
-        <img
-          src="${character.image}"
-          class="character-image"
+      return `
+        <div
+          class="
+            character-card
+            rarity-${character.rarity}
+          "
         >
 
-        <img
-          src="${elementIcons[character.element]}"
-          class="element-icon"
-        >
+          <img
+            src="${character.image}"
+            class="character-image"
+          >
+
+          <img
+            src="${elementIcons[character.element]}"
+            class="element-icon"
+          >
+
+        </div>
+      `;
+    }).join("");
+
+  const emptySlots =
+    '<div class="empty-slot"></div>'
+      .repeat(needCount);
+
+  document.getElementById("result").innerHTML =
+    remainCards + emptySlots;
+
+  document.getElementById("message-area")
+    .innerHTML = `
+      <div class="reset-message">
+
+        <p>
+          残り${selectedCharacters.length}人です
+        </p>
+
+        <p>
+          不足する${needCount}人を
+          再抽選しますか？
+        </p>
+
+        <button onclick="fillRemainingTeam()">
+          不足分を補充する
+        </button>
 
       </div>
     `;
-  }).join("");
-
-const emptySlots =
-  '<div class="empty-slot"></div>'
-    .repeat(8 - selectedCharacters.length);
-
-document.getElementById("result").innerHTML =
-  remainCards + emptySlots;
 
   return;
 }
@@ -415,6 +432,9 @@ window.setStars = setStars;
 
 
 function fillRemainingTeam() {
+  
+  document.getElementById("message-area")
+  .innerHTML = "";
 
   const remainTeam =
     [...selectedCharacters];
