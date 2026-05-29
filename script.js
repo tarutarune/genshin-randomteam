@@ -394,6 +394,9 @@ window.setStars = setStars;
 
 function resetAndRandom() {
 
+  document.querySelector(".button-area")
+    .style.display = "block";
+
   selectedCharacters =
     characters.map(
       character => character.id
