@@ -73,8 +73,6 @@ function renderCharacters() {
 }
 
 function randomTeam() {
-  
-  function randomTeam() {
 
   if (selectedCharacters.length < 8) {
 
