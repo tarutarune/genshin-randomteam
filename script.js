@@ -121,14 +121,16 @@ if (
       .repeat(needCount);
 
   document.getElementById("result").innerHTML =
-  remainCards +
-  emptySlots +
-  `
-    <div class="fill-button-area">
-      <button onclick="fillRemainingTeam()">
-        残り${selectedCharacters.length}人＋${needCount}人補充して完成
-      </button>
-    </div>
+  remainCards + emptySlots;
+
+document.getElementById("message-area")
+  .innerHTML = `
+    <button
+      class="fill-team-button"
+      onclick="fillRemainingTeam()"
+    >
+      残り${selectedCharacters.length}人＋${needCount}人補充して完成
+    </button>
   `;
 
   
