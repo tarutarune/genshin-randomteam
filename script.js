@@ -80,9 +80,8 @@ if (
   selectedCharacters.length > 0 &&
   selectedCharacters.length < 8
 ) {
-
-  document.querySelector(".button-area")
-    .style.display = "none";
+  
+  currentTeam = [...selectedCharacters];
 
   const needCount =
     8 - selectedCharacters.length;
@@ -460,8 +459,6 @@ function fillRemainingTeam() {
     ...additionalMembers
   ];
 
-  document.querySelector(".button-area")
-    .style.display = "block";
 
   document.getElementById("result").innerHTML =
     '<div class="empty-slot"></div>'.repeat(8);
