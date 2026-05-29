@@ -86,23 +86,42 @@ if (
     8 - selectedCharacters.length;
 
   document.getElementById("result").innerHTML = `
-    <div class="reset-message">
+ const remainCards =
+  selectedCharacters.map(characterId => {
 
-      <p>
-        残り${selectedCharacters.length}人です
-      </p>
+    const character =
+      characters.find(
+        c => c.id === characterId
+      );
 
-      <p>
-        残りの${selectedCharacters.length}人を使用し、
-        不足する${needCount}人を再抽選しますか？
-      </p>
+    return `
+      <div
+        class="
+          character-card
+          rarity-${character.rarity}
+        "
+      >
 
-      <button onclick="fillRemainingTeam()">
-        不足分を補充する
-      </button>
+        <img
+          src="${character.image}"
+          class="character-image"
+        >
 
-    </div>
-  `;
+        <img
+          src="${elementIcons[character.element]}"
+          class="element-icon"
+        >
+
+      </div>
+    `;
+  }).join("");
+
+const emptySlots =
+  '<div class="empty-slot"></div>'
+    .repeat(8 - selectedCharacters.length);
+
+document.getElementById("result").innerHTML =
+  remainCards + emptySlots;
 
   return;
 }
