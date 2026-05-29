@@ -390,6 +390,12 @@ button {
   30% {
     transform: scale(1.18);
     color: #e0b14b;
+    30% {
+  transform: scale(1.18);
+  color: #e0b14b;
+  text-shadow:
+    0 0 8px #e0b14b;
+}
   }
 
   60% {
