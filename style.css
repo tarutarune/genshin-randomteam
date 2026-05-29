@@ -438,3 +438,43 @@ button {
 
   display: inline-block;
 }
+
+
+#total-stars {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  margin-bottom: 24px;
+
+  color: #e0b14b;
+}
+
+.star-rating {
+
+  margin-top: 12px;
+
+  font-size: 28px;
+}
+
+.star {
+
+  cursor: pointer;
+
+  color: #666;
+
+  transition:
+    transform 0.15s,
+    color 0.15s;
+}
+
+.star:hover {
+
+  transform: scale(1.2);
+}
+
+.star.filled {
+
+  color: #e0b14b;
+}
