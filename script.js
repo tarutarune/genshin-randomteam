@@ -123,18 +123,8 @@ if (
   document.getElementById("result").innerHTML =
   remainCards + emptySlots;
   
-  alert("ボタン表示処理");
-
-document.getElementById("message-area")
-  .innerHTML = `
-    <button
-      class="fill-team-button"
-      onclick="fillRemainingTeam()"
-    >
-      残り${selectedCharacters.length}人＋${needCount}人補充して完成
-    </button>
-  `;
-
+  document.getElementById("message-area")
+  .innerHTML = "テスト";
   
 
   return;
