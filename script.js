@@ -72,6 +72,10 @@ function renderCharacters() {
     }).join("");
 }
 
+
+function randomTeam() {
+  
+  
 if (
   selectedCharacters.length > 0 &&
   selectedCharacters.length < 8
