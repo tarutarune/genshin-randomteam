@@ -187,7 +187,10 @@ function saveTeam() {
 
   if (currentTeam.length === 0) return;
 
-  teamHistory.push([...currentTeam]);
+  teamHistory.push({
+  team: [...currentTeam],
+  stars: 0
+});
 
 
 
