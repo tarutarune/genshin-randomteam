@@ -73,6 +73,18 @@ function renderCharacters() {
 }
 
 function randomTeam() {
+  
+  function randomTeam() {
+
+  if (selectedCharacters.length < 8) {
+
+    selectedCharacters =
+      characters.map(
+        character => character.id
+      );
+
+    renderCharacters();
+  }
 
   if (selectedCharacters.length === 0) {
 
