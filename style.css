@@ -47,7 +47,7 @@ button {
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(140px, 140px));
+    repeat(auto-fit, minmax(120px, 120px));
 
   justify-content: center;
 
@@ -373,7 +373,7 @@ button {
 
   justify-content: center;
 
-  column-gap: 12px;
+  column-gap: 8px;
 
   row-gap: 8px;
 
