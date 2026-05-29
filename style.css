@@ -32,24 +32,22 @@ h2 {
   font-size: 32px;
 }
 
+
+button {
+  padding: 12px 24px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .button-area {
-
-  text-align: center;
-
-  margin-top: 10px;
 
   display: flex;
 
   justify-content: center;
 
   gap: 20px;
-}
 
-button {
-  padding: 12px 24px;
-  font-size: 20px;
-  margin-top: 0;
-  cursor: pointer;
+  margin-top: 0px;
 }
 
 #result {
