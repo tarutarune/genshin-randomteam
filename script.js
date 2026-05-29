@@ -124,10 +124,11 @@ if (
   remainCards + emptySlots;
 
 document.getElementById("message-area")
-  .style.background = "red";
-
-document.getElementById("message-area")
-  .innerHTML = "ボタンテスト";
+  .innerHTML = `
+    <button>
+      ボタンテスト
+    </button>
+  `;
   
   return;
 }
