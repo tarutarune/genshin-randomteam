@@ -122,19 +122,12 @@ if (
 
  document.getElementById("result").innerHTML =
   remainCards + emptySlots;
-  
-  document.getElementById("result").innerHTML =
-  remainCards + emptySlots;
 
 document.getElementById("message-area")
-  .innerHTML = `
-    <button
-      class="fill-team-button"
-      onclick="fillRemainingTeam()"
-    >
-      残り${selectedCharacters.length}人＋${needCount}人補充して完成
-    </button>
-  `;
+  .style.background = "red";
+
+document.getElementById("message-area")
+  .innerHTML = "ボタンテスト";
   
   return;
 }
