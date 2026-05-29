@@ -318,16 +318,19 @@ function renderHistory() {
     
     
     
-    const totalStars =
+const totalStars =
   teamHistory.reduce(
     (sum, entry) =>
       sum + entry.stars,
     0
   );
 
+const maxStars =
+  teamHistory.length * 9;
+
 document.getElementById("total-stars")
   .textContent =
-    `合計 ★${totalStars}`;
+    `合計 ★${totalStars}/${maxStars}`;
     
     
 }
