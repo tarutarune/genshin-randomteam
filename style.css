@@ -43,25 +43,28 @@ h2 {
 
   border: 1px solid white;
 
-  border-radius: 5px;
+  border-radius: 3px;
 
   font-size: 20px;
 
   font-weight: 500;
 
-  min-height: 70x;
+  min-height: 60px;
+  
+  padding : 0 24px;
 
   box-shadow:
-    6px 6px 0 white;
+    3px 3px 0 white;
 
-  transition: .1s;
+  transition: .1s ease,
+  box-shadow: .1s ease;
 }
 
 #random-button:active,
 #save-button:active {
 
   transform:
-    translate(4px,4px);
+    translate(2px,2px);
 
   box-shadow:
     1px 1px 0 white;
