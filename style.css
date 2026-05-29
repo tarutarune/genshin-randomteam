@@ -507,7 +507,13 @@ button {
 
 .reset-message {
 
-  margin-top: 24px;
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  margin: 24px auto;
 
   padding: 24px;
 
@@ -515,9 +521,11 @@ button {
 
   background:
     rgba(255,255,255,0.05);
+
+  text-align: center;
 }
 
 .reset-message p {
 
-  margin: 8px 0;
+  margin: 12px 0;
 }
