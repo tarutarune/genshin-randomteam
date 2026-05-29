@@ -395,6 +395,81 @@ function setStars(teamIndex, stars) {
 window.setStars = setStars;
 
 
+function fillRemainingTeam() {
+
+  const remainTeam =
+    [...selectedCharacters];
+
+  const needCount =
+    8 - remainTeam.length;
+
+  const shuffled =
+    [...characters]
+      .sort(() => 0.5 - Math.random());
+
+  const additionalMembers =
+    shuffled
+      .map(character => character.id)
+      .slice(0, needCount);
+
+  currentTeam = [
+    ...remainTeam,
+    ...additionalMembers
+  ];
+
+  document.querySelector(".button-area")
+    .style.display = "block";
+
+  document.getElementById("result").innerHTML =
+    '<div class="empty-slot"></div>'.repeat(8);
+
+  const slots =
+    document.querySelectorAll(
+      "#result .empty-slot"
+    );
+
+  for (let i = 0; i < 8; i++) {
+
+    setTimeout(() => {
+
+      const character =
+        characters.find(
+          c =>
+            c.id === currentTeam[i]
+        );
+
+      if (!character) return;
+
+      slots[i].outerHTML = `
+        <div
+          class="
+            character-card
+            rarity-${character.rarity}
+            reveal-animation
+          "
+        >
+
+          <img
+            src="${character.image}"
+            class="character-image"
+          />
+
+          <img
+            src="${elementIcons[character.element]}"
+            class="element-icon"
+          />
+
+        </div>
+      `;
+
+    }, i * 350);
+  }
+}
+
+window.fillRemainingTeam =
+  fillRemainingTeam;
+
+
 
 function resetAndRandom() {
 
