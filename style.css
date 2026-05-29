@@ -502,3 +502,22 @@ button {
 
   opacity: 1;
 }
+
+
+
+.reset-message {
+
+  margin-top: 24px;
+
+  padding: 24px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,0.05);
+}
+
+.reset-message p {
+
+  margin: 8px 0;
+}
