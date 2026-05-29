@@ -34,13 +34,15 @@ h2 {
 }
 
 
-button {
+#random-button,
+#save-button,
+.fill-team-button {
 
   appearance: none;
 
-  border: 0;
+  border: none;
 
-  border-radius: 16px;
+  border-radius: 18px;
 
   background: #f5f5f5;
 
@@ -56,24 +58,24 @@ button {
     0 6px 0 #cfcfcf;
 
   transition:
-    transform .08s ease,
-    box-shadow .08s ease;
+    transform 0.08s ease,
+    box-shadow 0.08s ease;
 
   cursor: pointer;
 }
 
-button:hover {
-
-  filter: brightness(0.98);
-}
-
-button:active {
+#random-button:active,
+#save-button:active,
+.fill-team-button:active {
 
   transform: translateY(4px);
 
   box-shadow:
     0 2px 0 #cfcfcf;
 }
+
+
+
 .button-area {
 
   display: flex;
@@ -86,11 +88,11 @@ button:active {
 }
 
 #random-button {
-  min-width: 240px;
+  min-width: 210px;
 }
 
 #save-button {
-  min-width: 140px;
+  min-width: 120px;
 }
 
 
