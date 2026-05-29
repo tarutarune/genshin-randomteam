@@ -43,13 +43,13 @@ h2 {
 
   border: 2px solid white;
 
-  border-radius: 3px;
+  border-radius: 5px;
 
-  font-size: 24px;
+  font-size: 20px;
 
   font-weight: 700;
 
-  min-height: 72px;
+  min-height: 66px;
 
   box-shadow:
     6px 6px 0 white;
@@ -81,11 +81,11 @@ h2 {
 }
 
 #random-button {
-  min-width: 210px;
+  min-width: 180px;
 }
 
 #save-button {
-  min-width: 120px;
+  min-width: 100px;
 }
 
 
