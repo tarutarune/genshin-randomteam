@@ -55,7 +55,7 @@ function startTeamBuild() {
 
 function drawCharacter(slotIndex) {
 
-  if (slotIndex !== currentSlot) return;
+ // if (slotIndex !== currentSlot) return;
 
   const characterId =
     randomPool.shift();
@@ -95,7 +95,7 @@ function drawCharacter(slotIndex) {
 
   currentTeam.push(characterId);
 
-  currentSlot++;
+  // currentSlot++;
 }
 
 
