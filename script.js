@@ -34,7 +34,7 @@ function toggleCharacter(characterId) {
   }
 
   renderCharacters();
-  renderHistory();
+
 }
 
 window.toggleCharacter = toggleCharacter;
@@ -204,6 +204,7 @@ document.getElementById("message-area")
 }
 
 renderCharacters();
+  renderHistory();
 
 document
   .getElementById("random-button")
