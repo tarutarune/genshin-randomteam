@@ -6,15 +6,19 @@ const elementIcons = {
   "氷": "icons/cryo.png",
   "草": "icons/dendro.png",
   "岩": "icons/geo.png",
-  "風": "icons/anemo.png"
+  "風": "icons/anemo.png",
+  "全元素": "icons/star.png"
 };
 
 let selectedCharacters =
   characters.map(character => character.id);
 
-let currentTeam = [];
+let currentTeam = []
 
-let teamHistory = [];
+let teamHistory =
+  JSON.parse(
+    localStorage.getItem("teamHistory")
+  ) || [];
 
 function toggleCharacter(characterId) {
 
@@ -30,6 +34,7 @@ function toggleCharacter(characterId) {
   }
 
   renderCharacters();
+  renderHistory();
 }
 
 window.toggleCharacter = toggleCharacter;
@@ -255,6 +260,8 @@ function saveTeam() {
   stars: 0
 });
 
+saveHistory();
+
 
 
   selectedCharacters =
@@ -418,7 +425,7 @@ function setStars(teamIndex, stars) {
     teamHistory[teamIndex].stars =
       stars;
   }
-
+saveHistory();
   renderHistory();
 }
 
@@ -514,8 +521,21 @@ function resetAndRandom() {
 
   renderCharacters();
 
+  renderHistory();
+
   randomTeam();
 }
 
 window.resetAndRandom =
   resetAndRandom;
+
+
+
+function saveHistory() {
+
+  localStorage.setItem(
+    "teamHistory",
+    JSON.stringify(teamHistory)
+  );
+}
+
