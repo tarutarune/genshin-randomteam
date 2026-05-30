@@ -85,6 +85,9 @@ function animateReveal(speed) {
       )
     ];
 
+  slot.className =
+  `character-card rarity-${randomCharacter.rarity}`;
+
   slot.innerHTML = `
     <img
       src="${randomCharacter.image}"
