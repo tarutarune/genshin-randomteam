@@ -661,3 +661,27 @@ h2 {
   box-shadow:
     3px 3px 0 #666;
 }
+
+
+#reset-area {
+
+  margin-top: 16px;
+}
+
+#reset-link {
+
+  color: #888;
+
+  font-size: 14px;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+
+  transition: color 0.2s;
+}
+
+#reset-link:hover {
+
+  color: #fff;
+}
