@@ -599,6 +599,10 @@ h2 {
   margin-top: 20px;
 
   font-size: 18px;
+
+   padding: 12px 24px;
+
+  font-size: 18px;
 }
 
 #message-area {
@@ -619,11 +623,4 @@ h2 {
 
   margin-bottom: 0;
 
-}
-
-.fill-team-button {
-
-  padding: 12px 24px;
-
-  font-size: 18px;
 }
