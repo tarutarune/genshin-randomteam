@@ -58,41 +58,73 @@ function drawCharacter(slotIndex) {
 
  // if (slotIndex !== currentSlot) return;
 
-  const characterId =
-    randomPool.shift();
+const finalCharacterId =
+  randomPool.shift();
 
-  if (!characterId) return;
+if (!finalCharacterId) return;
 
-  const character =
-    characters.find(
-      c => c.id === characterId
-    );
-
-  const slot =
+const slot =
   document.querySelector(
     `[data-slot="${slotIndex}"]`
   );
 
-slot.outerHTML = `
-    <div
-      class="
-        character-card
-        rarity-${character.rarity}
-      "
-    >
+let count = 0;
 
-      <img
-        src="${character.image}"
-        class="character-image"
-      >
+const interval = setInterval(() => {
 
-      <img
-        src="${elementIcons[character.element]}"
-        class="element-icon"
-      >
+  const randomCharacter =
+    characters[
+      Math.floor(
+        Math.random() *
+        characters.length
+      )
+    ];
 
-    </div>
+  slot.innerHTML = `
+    <img
+      src="${randomCharacter.image}"
+      class="character-image"
+    />
+
+    <img
+      src="${elementIcons[randomCharacter.element]}"
+      class="element-icon"
+    />
   `;
+
+  count++;
+
+  if (count >= 12) {
+
+    clearInterval(interval);
+
+    const finalCharacter =
+      characters.find(
+        c =>
+          c.id === finalCharacterId
+      );
+
+    slot.className =
+      `character-card rarity-${finalCharacter.rarity}`;
+
+    slot.innerHTML = `
+      <img
+        src="${finalCharacter.image}"
+        class="character-image"
+      />
+
+      <img
+        src="${elementIcons[finalCharacter.element]}"
+        class="element-icon"
+      />
+    `;
+
+    currentTeam.push(
+      finalCharacterId
+    );
+  }
+
+}, 50);
 
   currentTeam.push(characterId);
 
