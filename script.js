@@ -22,10 +22,36 @@ let selectedCharacters =
 
 let currentTeam = []
 
+let randomPool = [];
+
+let currentSlot = 0;
+
+
 let teamHistory =
   JSON.parse(
     localStorage.getItem("teamHistory")
   ) || [];
+
+
+function startTeamBuild() {
+
+  randomPool =
+    [...selectedCharacters]
+      .sort(() => 0.5 - Math.random());
+
+  currentTeam = [];
+
+  currentSlot = 0;
+
+  document.getElementById("result").innerHTML =
+    [...Array(8)].map((_, index) => `
+      <div
+        class="empty-slot"
+        onclick="drawCharacter(${index})"
+      ></div>
+    `).join("");
+}
+
 
 
 function saveSelectedCharacters() {
@@ -178,8 +204,7 @@ document.getElementById("message-area")
 
   currentTeam = team;
 
-  document.getElementById("result").innerHTML =
-    '<div class="empty-slot"></div>'.repeat(8);
+  startTeamBuild();
 
   const slots =
     document.querySelectorAll("#result .empty-slot");
