@@ -45,7 +45,7 @@ function startTeamBuild() {
 
   document.getElementById("result").innerHTML =
     [...Array(8)].map((_, index) => `
-      <div>
+      <div
   class="empty-slot"
   data-slot="${index}"
   onclick="drawCharacter(${index})"
