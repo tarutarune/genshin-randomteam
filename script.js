@@ -865,22 +865,26 @@ function renderRemainingInfo() {
     }).join("");
 
   document.getElementById(
-    "remaining-info"
-  ).innerHTML = `
-    <div>
+  "remaining-info"
+).innerHTML = `
+  <div class="rarity-counts">
 
-      ★5 ${fiveStars}人
+    <span class="five-star-count">
+      ★ ${fiveStars}人
+    </span>
 
-      ／
+    ／
 
-      ★4 ${fourStars}人
+    <span class="four-star-count">
+      ★ ${fourStars}人
+    </span>
 
-    </div>
+  </div>
 
-    <div>
+  <div>
 
-      ${elementHtml}
+    ${elementHtml}
 
-    </div>
-  `;
+  </div>
+`;
 }
