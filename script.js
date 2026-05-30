@@ -97,7 +97,7 @@ function animateReveal(speed) {
 
   count++;
 
-  if (count >= 12) {
+  if (count >= 16) {
 
     const finalCharacter =
       characters.find(
@@ -128,12 +128,12 @@ function animateReveal(speed) {
   }
 
   setTimeout(
-    () => animateReveal(speed + 20),
+    () => animateReveal(speed + 35),
     speed
   );
 }
 
-animateReveal(50);
+animateReveal(40);
 
   currentTeam.push(characterId);
 
