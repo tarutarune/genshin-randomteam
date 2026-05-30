@@ -65,8 +65,6 @@ function drawCharacter(slotIndex) {
 
   if (isDrawing) return;
 
-isDrawing = true;
-
   
   const slot =
     document.querySelector(
@@ -93,6 +91,8 @@ isDrawing = true;
 
 if (!finalCharacterId) return;
 
+ isDrawing = true;
+  
 slot.dataset.spinning = "true";
 
   if (!finalCharacterId) return;
