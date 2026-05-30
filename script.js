@@ -11,7 +11,14 @@ const elementIcons = {
 };
 
 let selectedCharacters =
-  characters.map(character => character.id);
+  JSON.parse(
+    localStorage.getItem(
+      "selectedCharacters"
+    )
+  ) ||
+  characters.map(
+    character => character.id
+  );
 
 let currentTeam = []
 
@@ -19,6 +26,19 @@ let teamHistory =
   JSON.parse(
     localStorage.getItem("teamHistory")
   ) || [];
+
+
+function saveSelectedCharacters() {
+
+  localStorage.setItem(
+    "selectedCharacters",
+    JSON.stringify(
+      selectedCharacters
+    )
+  );
+}
+
+
 
 function toggleCharacter(characterId) {
 
@@ -34,6 +54,7 @@ function toggleCharacter(characterId) {
   }
 
   renderCharacters();
+  saveSelectedCharacters();
 
 }
 
@@ -273,6 +294,8 @@ saveHistory();
       )
   );
 
+  
+saveSelectedCharacters();
 
 
   currentTeam = [];
