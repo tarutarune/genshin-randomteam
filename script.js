@@ -788,6 +788,14 @@ function resetAll() {
 
   renderHistory();
 
+  document.getElementById(
+    "history-count"
+  ).textContent = "(0)";
+
+  document.getElementById(
+    "total-stars"
+  ).textContent = "合計 ★0 / 0";
+
   startTeamBuild();
 
   document.getElementById(
