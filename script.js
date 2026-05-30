@@ -73,6 +73,8 @@ const slot =
 
 let count = 0;
 
+
+  
 function animateReveal(speed) {
 
   const randomCharacter =
@@ -97,7 +99,7 @@ function animateReveal(speed) {
 
   count++;
 
-  if (count >= 16) {
+  if (count >= 25) {
 
     const finalCharacter =
       characters.find(
@@ -127,13 +129,29 @@ function animateReveal(speed) {
     return;
   }
 
-  setTimeout(
-    () => animateReveal(speed + 35),
-    speed
-  );
+  let nextSpeed = speed;
+
+if (count < 12) {
+
+  nextSpeed = speed + 10;
+
+} else if (count < 18) {
+
+  nextSpeed = speed + 30;
+
+} else {
+
+  nextSpeed = speed + 80;
+
 }
 
-animateReveal(40);
+setTimeout(
+  () => animateReveal(nextSpeed),
+  speed
+);
+}
+
+animateReveal(30);
 
   currentTeam.push(characterId);
 
