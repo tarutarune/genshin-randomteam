@@ -464,14 +464,17 @@ historyCount.classList.add("history-pulse");
 
 
 
-
-
-  document.getElementById("result").innerHTML =
-    '<div class="empty-slot"></div>'.repeat(8);
+startTeamBuild();;
 
 document.getElementById(
   "save-button"
 ).disabled = true;
+
+  currentTeam = [];
+currentSlot = 0;
+
+startTeamBuild();
+
   
 }
 
