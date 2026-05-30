@@ -406,9 +406,6 @@ document.getElementById("message-area")
 renderCharacters();
   renderHistory();
 
-document
-  .getElementById("random-button")
-  .addEventListener("click", randomTeam);
 
 startTeamBuild();;
 
@@ -482,10 +479,6 @@ historyCount.classList.remove("history-pulse");
 void historyCount.offsetWidth;
 
 historyCount.classList.add("history-pulse");
-
-
-
-startTeamBuild();;
 
 document.getElementById(
   "save-button"
@@ -609,6 +602,18 @@ document.getElementById("total-stars")
 document
   .getElementById("save-button")
   .addEventListener("click", saveTeam);
+
+document
+  .getElementById("reset-link")
+  .addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+      resetAll();
+    }
+  );
   
   
 function setStars(teamIndex, stars) {
@@ -740,3 +745,44 @@ function saveHistory() {
   );
 }
 
+
+
+function resetAll() {
+
+  if (
+    !confirm(
+      "履歴と抽選状態をすべてリセットしますか？"
+    )
+  ) {
+    return;
+  }
+
+  teamHistory = [];
+
+  selectedCharacters =
+    characters.map(
+      character => character.id
+    );
+
+  saveSelectedCharacters();
+
+  currentTeam = [];
+
+  localStorage.removeItem(
+    "teamHistory"
+  );
+
+  localStorage.removeItem(
+    "selectedCharacters"
+  );
+
+  renderCharacters();
+
+  renderHistory();
+
+  startTeamBuild();
+
+  document.getElementById(
+    "save-button"
+  ).disabled = true;
+}
