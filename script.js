@@ -406,9 +406,6 @@ document.getElementById("message-area")
 renderCharacters();
   renderHistory();
 
-document
-  .getElementById("random-button")
-  .addEventListener("click", randomTeam);
 
 startTeamBuild();;
 
@@ -482,10 +479,6 @@ historyCount.classList.remove("history-pulse");
 void historyCount.offsetWidth;
 
 historyCount.classList.add("history-pulse");
-
-
-
-startTeamBuild();;
 
 document.getElementById(
   "save-button"
@@ -770,6 +763,8 @@ function resetAll() {
     characters.map(
       character => character.id
     );
+
+  saveSelectedCharacters();
 
   currentTeam = [];
 
