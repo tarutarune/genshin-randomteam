@@ -303,8 +303,7 @@ document
   .getElementById("random-button")
   .addEventListener("click", randomTeam);
 
-document.getElementById("result").innerHTML =
-  '<div class="empty-slot"></div>'.repeat(8);
+startTeamBuild();;
 
 
 
