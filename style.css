@@ -596,9 +596,35 @@ h2 {
 
 .fill-team-button {
 
-  margin-top: 20px;
+  background: #111;
 
-  font-size: 18px;
+  color: white;
+
+  border: 1px solid white;
+
+  border-radius: 5px;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  min-height: 60px;
+
+  padding: 0 24px;
+
+  box-shadow:
+    3px 3px 0 white;
+
+  transition: .1s;
+}
+
+.fill-team-button:active {
+
+  transform:
+    translate(2px,2px);
+
+  box-shadow:
+    1px 1px 0 white;
 }
 
 #message-area {
@@ -619,11 +645,4 @@ h2 {
 
   margin-bottom: 0;
 
-}
-
-.fill-team-button {
-
-  padding: 12px 24px;
-
-  font-size: 18px;
 }
