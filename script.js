@@ -204,8 +204,6 @@ document.getElementById("message-area")
 
   currentTeam = team;
 
-  startTeamBuild();
-
   const slots =
     document.querySelectorAll("#result .empty-slot");
 
