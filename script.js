@@ -45,10 +45,11 @@ function startTeamBuild() {
 
   document.getElementById("result").innerHTML =
     [...Array(8)].map((_, index) => `
-      <div
-        class="empty-slot"
-        onclick="drawCharacter(${index})"
-      ></div>
+      <div>
+  class="empty-slot"
+  data-slot="${index}"
+  onclick="drawCharacter(${index})"
+></div>
     `).join("");
 }
 
@@ -67,12 +68,12 @@ function drawCharacter(slotIndex) {
       c => c.id === characterId
     );
 
-  const slots =
-    document.querySelectorAll(
-      "#result .empty-slot"
-    );
+  const slot =
+  document.querySelector(
+    `[data-slot="${slotIndex}"]`
+  );
 
-  slots[slotIndex].outerHTML = `
+slot.outerHTML = `
     <div
       class="
         character-card
