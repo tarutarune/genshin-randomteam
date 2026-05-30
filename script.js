@@ -13,9 +13,12 @@ const elementIcons = {
 let selectedCharacters =
   characters.map(character => character.id);
 
-let currentTeam = [];
+let currentTeam = []
 
-let teamHistory = [];
+let teamHistory =
+  JSON.parse(
+    localStorage.getItem("teamHistory")
+  ) || [];
 
 function toggleCharacter(characterId) {
 
@@ -256,6 +259,8 @@ function saveTeam() {
   stars: 0
 });
 
+saveHistory();
+
 
 
   selectedCharacters =
@@ -419,7 +424,7 @@ function setStars(teamIndex, stars) {
     teamHistory[teamIndex].stars =
       stars;
   }
-
+saveHistory();
   renderHistory();
 }
 
@@ -515,8 +520,21 @@ function resetAndRandom() {
 
   renderCharacters();
 
+  renderHistory();
+
   randomTeam();
 }
 
 window.resetAndRandom =
   resetAndRandom;
+
+
+
+function saveHistory() {
+
+  localStorage.setItem(
+    "teamHistory",
+    JSON.stringify(teamHistory)
+  );
+}
+
