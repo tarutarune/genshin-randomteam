@@ -864,19 +864,21 @@ function renderRemainingInfo() {
       `;
     }).join("");
 
-  document.getElementById(
+document.getElementById(
   "remaining-info"
 ).innerHTML = `
   <div class="rarity-counts">
 
-    <span class="five-star-count">
-      ★ ${fiveStars}人
+    <span>
+      <span class="five-star">★</span>
+      ${fiveStars}人
     </span>
 
     ／
 
-    <span class="four-star-count">
-      ★ ${fourStars}人
+    <span>
+      <span class="four-star">★</span>
+      ${fourStars}人
     </span>
 
   </div>
