@@ -160,6 +160,15 @@ slot.dataset.spinning = "true";
         finalCharacterId
       );
 
+      selectedCharacters =
+  selectedCharacters.filter(
+    id => id !== finalCharacterId
+  );
+
+saveSelectedCharacters();
+
+renderCharacters();
+
       // 8人揃ったら保存ボタン解放
       if (
         currentTeam.length === 8
@@ -455,16 +464,6 @@ saveHistory();
 
 
 
-  selectedCharacters =
-  selectedCharacters.filter(
-    id =>
-      !currentTeam.some(
-        currentId => currentId === id
-      )
-  );
-
-  
-saveSelectedCharacters();
 
 
   currentTeam = [];
