@@ -68,6 +68,9 @@ const slot =
     `[data-slot="${slotIndex}"]`
   );
 
+  slot.className =
+  "character-card";
+
 let count = 0;
 
 const interval = setInterval(() => {
