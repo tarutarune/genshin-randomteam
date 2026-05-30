@@ -7,6 +7,7 @@ const elementIcons = {
   "草": "icons/dendro.png",
   "岩": "icons/geo.png",
   "風": "icons/anemo.png"
+  "全元素": "icons/star.png"
 };
 
 let selectedCharacters =
