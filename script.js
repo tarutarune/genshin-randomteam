@@ -499,11 +499,19 @@ function renderHistory() {
 
   if (teamHistory.length === 0) {
 
-    historyList.innerHTML =
-      "<p>まだ履歴がありません</p>";
+  historyList.innerHTML =
+    "<p>まだ履歴がありません</p>";
 
-    return;
-  }
+  document.getElementById(
+    "history-count"
+  ).textContent = "(0)";
+
+  document.getElementById(
+    "total-stars"
+  ).textContent = "合計 ★0 / 0";
+
+  return;
+}
 
   historyList.innerHTML =
     teamHistory.map((entry, index) => {
