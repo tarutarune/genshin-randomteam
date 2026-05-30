@@ -242,6 +242,9 @@ function toggleCharacter(characterId) {
 
 window.toggleCharacter = toggleCharacter;
 
+
+
+
 function renderCharacters() {
 
   document.getElementById("character-list").innerHTML =
@@ -278,6 +281,7 @@ function renderCharacters() {
         </div>
       `;
     }).join("");
+  renderRemainingInfo();
 }
 
 
@@ -801,4 +805,82 @@ function resetAll() {
   document.getElementById(
     "save-button"
   ).disabled = true;
+}
+
+
+
+function renderRemainingInfo() {
+
+  const remainingCharacters =
+    characters.filter(
+      character =>
+        selectedCharacters.includes(
+          character.id
+        )
+    );
+
+  const fiveStars =
+    remainingCharacters.filter(
+      character =>
+        character.rarity === 5
+    ).length;
+
+  const fourStars =
+    remainingCharacters.filter(
+      character =>
+        character.rarity === 4
+    ).length;
+
+  const elements = [
+    "炎",
+    "水",
+    "雷",
+    "氷",
+    "草",
+    "岩",
+    "風"
+  ];
+
+  const elementHtml =
+    elements.map(element => {
+
+      const count =
+        remainingCharacters.filter(
+          character =>
+            character.element === element
+        ).length;
+
+      return `
+        <span class="element-count">
+
+          <img
+            src="${elementIcons[element]}"
+            class="remaining-element-icon"
+          >
+
+          ${count}
+
+        </span>
+      `;
+    }).join("");
+
+  document.getElementById(
+    "remaining-info"
+  ).innerHTML = `
+    <div>
+
+      ★5 ${fiveStars}人
+
+      ／
+
+      ★4 ${fourStars}人
+
+    </div>
+
+    <div>
+
+      ${elementHtml}
+
+    </div>
+  `;
 }

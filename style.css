@@ -685,3 +685,33 @@ h2 {
 
   color: #fff;
 }
+
+
+#remaining-info {
+
+  margin-bottom: 20px;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+.element-count {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin: 0 8px;
+}
+
+.remaining-element-icon {
+
+  width: 20px;
+
+  height: 20px;
+
+  object-fit: contain;
+}
