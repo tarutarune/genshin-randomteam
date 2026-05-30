@@ -26,6 +26,8 @@ let randomPool = [];
 
 let currentSlot = 0;
 
+let isDrawing = false;
+
 
 let teamHistory =
   JSON.parse(
@@ -61,6 +63,11 @@ function startTeamBuild() {
 
 function drawCharacter(slotIndex) {
 
+  if (isDrawing) return;
+
+isDrawing = true;
+
+  
   const slot =
     document.querySelector(
       `[data-slot="${slotIndex}"]`
@@ -75,8 +82,18 @@ function drawCharacter(slotIndex) {
     return;
   }
 
+ if (
+  slot.dataset.spinning === "true"
+) {
+  return;
+} 
+
   const finalCharacterId =
-    randomPool.shift();
+  randomPool.shift();
+
+if (!finalCharacterId) return;
+
+slot.dataset.spinning = "true";
 
   if (!finalCharacterId) return;
 
@@ -137,6 +154,7 @@ function drawCharacter(slotIndex) {
 
       // この枠は確定済み
       slot.dataset.locked = "true";
+      slot.dataset.spinning = "false";
 
       currentTeam.push(
         finalCharacterId
@@ -151,6 +169,7 @@ function drawCharacter(slotIndex) {
         ).disabled = false;
       }
 
+      isDrawing = false;
       return;
     }
 
