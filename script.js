@@ -53,6 +53,55 @@ function startTeamBuild() {
 }
 
 
+function drawCharacter(slotIndex) {
+
+  if (slotIndex !== currentSlot) return;
+
+  const characterId =
+    randomPool.shift();
+
+  if (!characterId) return;
+
+  const character =
+    characters.find(
+      c => c.id === characterId
+    );
+
+  const slots =
+    document.querySelectorAll(
+      "#result .empty-slot"
+    );
+
+  slots[slotIndex].outerHTML = `
+    <div
+      class="
+        character-card
+        rarity-${character.rarity}
+      "
+    >
+
+      <img
+        src="${character.image}"
+        class="character-image"
+      >
+
+      <img
+        src="${elementIcons[character.element]}"
+        class="element-icon"
+      >
+
+    </div>
+  `;
+
+  currentTeam.push(characterId);
+
+  currentSlot++;
+}
+
+
+
+
+
 
 function saveSelectedCharacters() {
 
@@ -505,8 +554,7 @@ function fillRemainingTeam() {
   ];
 
 
-  document.getElementById("result").innerHTML =
-    '<div class="empty-slot"></div>'.repeat(8);
+  startTeamBuild();
 
   const slots =
     document.querySelectorAll(
@@ -554,6 +602,8 @@ function fillRemainingTeam() {
 window.fillRemainingTeam =
   fillRemainingTeam;
 
+window.drawCharacter =
+  drawCharacter;
 
 
 function resetAndRandom() {
