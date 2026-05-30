@@ -33,6 +33,11 @@ let teamHistory =
   ) || [];
 
 
+document.getElementById("save-button")
+  .disabled = true;
+
+
+
 function startTeamBuild() {
 
   randomPool =
@@ -129,6 +134,14 @@ function animateReveal(speed) {
       finalCharacterId
     );
 
+    if (currentTeam.length === 8) {
+
+  document.getElementById(
+    "save-button"
+  ).disabled = false;
+}
+
+    
     return;
   }
 
@@ -455,6 +468,11 @@ historyCount.classList.add("history-pulse");
 
   document.getElementById("result").innerHTML =
     '<div class="empty-slot"></div>'.repeat(8);
+
+document.getElementById(
+  "save-button"
+).disabled = true;
+  
 }
 
 function renderHistory() {

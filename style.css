@@ -646,3 +646,15 @@ h2 {
   margin-bottom: 0;
 
 }
+
+
+
+#save-button:disabled {
+
+  opacity: 0.35;
+
+  cursor: not-allowed;
+
+  box-shadow:
+    3px 3px 0 #666;
+}
