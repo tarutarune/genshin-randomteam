@@ -715,3 +715,23 @@ h2 {
 
   object-fit: contain;
 }
+
+
+.rarity-counts {
+
+  margin-bottom: 8px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+.five-star-count {
+
+  color: #d4af37;
+}
+
+.four-star-count {
+
+  color: #a855f7;
+}
