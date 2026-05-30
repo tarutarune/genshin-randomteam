@@ -6,7 +6,7 @@ const elementIcons = {
   "氷": "icons/cryo.png",
   "草": "icons/dendro.png",
   "岩": "icons/geo.png",
-  "風": "icons/anemo.png"
+  "風": "icons/anemo.png",
   "全元素": "icons/star.png"
 };
 
@@ -34,6 +34,7 @@ function toggleCharacter(characterId) {
   }
 
   renderCharacters();
+  renderHistory();
 }
 
 window.toggleCharacter = toggleCharacter;
