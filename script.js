@@ -61,120 +61,123 @@ function startTeamBuild() {
 
 function drawCharacter(slotIndex) {
 
- // if (slotIndex !== currentSlot) return;
+  const slot =
+    document.querySelector(
+      `[data-slot="${slotIndex}"]`
+    );
 
-const finalCharacterId =
-  randomPool.shift();
+  if (!slot) return;
 
-if (!finalCharacterId) return;
+  // 決定済みなら何もしない
+  if (
+    slot.dataset.locked === "true"
+  ) {
+    return;
+  }
 
-const slot =
-  document.querySelector(
-    `[data-slot="${slotIndex}"]`
-  );
+  const finalCharacterId =
+    randomPool.shift();
 
-  slot.className =
-  "character-card";
-
-let count = 0;
-
-
-  
-function animateReveal(speed) {
-
-  const randomCharacter =
-    characters[
-      Math.floor(
-        Math.random() *
-        characters.length
-      )
-    ];
+  if (!finalCharacterId) return;
 
   slot.className =
-  `character-card rarity-${randomCharacter.rarity}`;
+    "character-card";
 
-  slot.innerHTML = `
-    <img
-      src="${randomCharacter.image}"
-      class="character-image"
-    />
+  let count = 0;
 
-    <img
-      src="${elementIcons[randomCharacter.element]}"
-      class="element-icon"
-    />
-  `;
+  function animateReveal(speed) {
 
-  count++;
-
-  if (count >= 25) {
-
-    const finalCharacter =
-      characters.find(
-        c =>
-          c.id === finalCharacterId
-      );
+    const randomCharacter =
+      characters[
+        Math.floor(
+          Math.random() *
+          characters.length
+        )
+      ];
 
     slot.className =
-      `character-card rarity-${finalCharacter.rarity}`;
+      `character-card rarity-${randomCharacter.rarity}`;
 
     slot.innerHTML = `
       <img
-        src="${finalCharacter.image}"
+        src="${randomCharacter.image}"
         class="character-image"
       />
 
       <img
-        src="${elementIcons[finalCharacter.element]}"
+        src="${elementIcons[randomCharacter.element]}"
         class="element-icon"
       />
     `;
 
-    currentTeam.push(
-      finalCharacterId
+    count++;
+
+    if (count >= 22) {
+
+      const finalCharacter =
+        characters.find(
+          c =>
+            c.id === finalCharacterId
+        );
+
+      slot.className =
+        `character-card rarity-${finalCharacter.rarity}`;
+
+      slot.innerHTML = `
+        <img
+          src="${finalCharacter.image}"
+          class="character-image"
+        />
+
+        <img
+          src="${elementIcons[finalCharacter.element]}"
+          class="element-icon"
+        />
+      `;
+
+      // この枠は確定済み
+      slot.dataset.locked = "true";
+
+      currentTeam.push(
+        finalCharacterId
+      );
+
+      // 8人揃ったら保存ボタン解放
+      if (
+        currentTeam.length === 8
+      ) {
+        document.getElementById(
+          "save-button"
+        ).disabled = false;
+      }
+
+      return;
+    }
+
+    let nextSpeed = speed;
+
+    if (count < 12) {
+
+      nextSpeed = speed + 10;
+
+    } else if (count < 18) {
+
+      nextSpeed = speed + 30;
+
+    } else {
+
+      nextSpeed = speed + 80;
+
+    }
+
+    setTimeout(
+      () => animateReveal(nextSpeed),
+      speed
     );
-
-    if (currentTeam.length === 8) {
-
-  document.getElementById(
-    "save-button"
-  ).disabled = false;
-}
-
-    
-    return;
   }
 
-  let nextSpeed = speed;
-
-if (count < 12) {
-
-  nextSpeed = speed + 10;
-
-} else if (count < 18) {
-
-  nextSpeed = speed + 30;
-
-} else {
-
-  nextSpeed = speed + 80;
-
+  animateReveal(30);
 }
-
-setTimeout(
-  () => animateReveal(nextSpeed),
-  speed
-);
-}
-
-animateReveal(30);
-
-  currentTeam.push(characterId);
-
-  // currentSlot++;
-}
-
-
 
 
 
