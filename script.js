@@ -73,7 +73,7 @@ const slot =
 
 let count = 0;
 
-const interval = setInterval(() => {
+function animateReveal(speed) {
 
   const randomCharacter =
     characters[
@@ -99,8 +99,6 @@ const interval = setInterval(() => {
 
   if (count >= 12) {
 
-    clearInterval(interval);
-
     const finalCharacter =
       characters.find(
         c =>
@@ -125,9 +123,17 @@ const interval = setInterval(() => {
     currentTeam.push(
       finalCharacterId
     );
+
+    return;
   }
 
-}, 50);
+  setTimeout(
+    () => animateReveal(speed + 20),
+    speed
+  );
+}
+
+animateReveal(50);
 
   currentTeam.push(characterId);
 
