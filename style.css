@@ -735,3 +735,16 @@ h2 {
 
   color: #b57cff;
 }
+
+#close-share-card {
+
+  float: right;
+
+  border: none;
+
+  background: none;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
