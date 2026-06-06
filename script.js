@@ -106,6 +106,8 @@ slot.dataset.spinning = "true";
 
   let count = 0;
 
+  
+  
   function animateReveal(speed) {
 
     const randomCharacter =
@@ -131,8 +133,12 @@ slot.dataset.spinning = "true";
       />
     `;
 
-    tickSound.currentTime = 0;
-tickSound.play();
+const sound =
+  new Audio("sounds/stop.mp3");
+
+sound.volume = 0.3;
+
+sound.play();
 
     
 
