@@ -817,3 +817,31 @@ h2 {
 
   cursor: pointer;
 }
+
+
+.share-date {
+
+  margin-bottom: 20px;
+
+  font-size: 18px;
+
+  color: #ccc;
+}
+
+.share-summary {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+
+  max-width: 400px;
+
+  margin: 0 auto 24px;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
