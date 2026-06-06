@@ -1040,11 +1040,39 @@ function generateShareCard() {
     ${teamHistory.map(
       (entry, index) => `
 
+<div class="share-grid">
+
+  ${entry.team.map(
+    characterId => {
+
+      const character =
+        characters.find(
+          c =>
+            c.id ===
+            characterId
+        );
+
+      return `
         <div
-          class="share-team"
+          class="
+            share-character
+            rarity-${character.rarity}
+          "
         >
 
-          <div class="share-team-header">
+          <img
+            src="${character.image}"
+            class="share-character-image"
+          >
+
+        </div>
+      `;
+    }
+  ).join("")}
+
+</div>
+
+<div class="share-team-header">
 
   <span class="team-number">
     ${index + 1}組目
@@ -1056,8 +1084,6 @@ function generateShareCard() {
   </div>
 
 </div>
-
-<div class="share-grid">
 
             ${entry.team.map(
               characterId => {
