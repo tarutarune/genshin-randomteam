@@ -784,24 +784,11 @@ h2 {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 56px);
+    repeat(4, 48px);
 
   justify-content: center;
 
   gap: 4px;
-
-  margin-top: 12px;
-}
-
-.share-character {
-
-  width: 56px;
-
-  height: 56px;
-
-  border-radius: 8px;
-
-  object-fit: cover;
 }
 
 
@@ -891,7 +878,9 @@ h2 {
 
   gap: 12px;
 
-  margin-bottom: 12px;
+  margin-top: 12px;
+
+  margin-bottom: 16px;
 
   font-size: 18px;
 
