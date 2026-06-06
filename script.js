@@ -1231,3 +1231,7 @@ ${location.href}`;
     );
   }
 }
+
+
+
+window.shareResult = shareResult;
