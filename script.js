@@ -852,7 +852,7 @@ function fillRemainingTeam() {
     characters
       .filter(
         character =>
-          selectedCharacters.includes(
+          !currentTeam.includes(
             character.id
           )
       )
@@ -868,7 +868,6 @@ function fillRemainingTeam() {
     "message-area"
   ).innerHTML = "";
 }
-
 
 window.fillRemainingTeam =
   fillRemainingTeam;
