@@ -860,3 +860,22 @@ h2 {
     font-size: 14px;
   }
 }
+
+
+.share-character {
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+}
+
+.share-character-image {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
