@@ -1163,3 +1163,57 @@ async function saveShareCardAsImage() {
 
   link.click();
 }
+
+
+
+document
+  .getElementById("share-button")
+  .addEventListener(
+    "click",
+    shareResult
+  );
+
+async function shareResult() {
+
+  const totalStars =
+    teamHistory.reduce(
+      (sum, entry) =>
+        sum + entry.stars,
+      0
+    );
+
+  const usedCharacters =
+    new Set(
+      teamHistory.flatMap(
+        entry => entry.team
+      )
+    ).size;
+
+  const shareText =
+
+`原神ランダム編成
+
+出演 ${usedCharacters}人
+編成 ${teamHistory.length}組
+評価 ★${totalStars}/${teamHistory.length * 9}
+
+${location.href}`;
+
+  if (navigator.share) {
+
+    await navigator.share({
+      title: "原神ランダム編成",
+      text: shareText
+    });
+
+  } else {
+
+    await navigator.clipboard.writeText(
+      shareText
+    );
+
+    alert(
+      "共有文をコピーしました"
+    );
+  }
+}
