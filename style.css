@@ -481,12 +481,6 @@ h2 {
     historyPulse 0.6s ease;
 }
 
-.history-pulse {
-
-  animation:
-    historyPulse 0.6s ease;
-}
-
 #history-count {
 
   display: inline-block;
@@ -736,6 +730,45 @@ h2 {
   color: #b57cff;
 }
 
+#share-card {
+
+  max-width: 800px;
+
+  margin: 20px auto;
+
+  padding: 20px;
+
+  background: white;
+
+  color: black;
+}
+
+.share-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 40px);
+
+  gap: 4px;
+
+  justify-content: center;
+
+  margin-bottom: 12px;
+}
+
+.share-character {
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 4px;
+
+  object-fit: cover;
+}
+
+
 #close-share-card {
 
   float: right;
@@ -743,6 +776,8 @@ h2 {
   border: none;
 
   background: none;
+
+  color: #666;
 
   font-size: 24px;
 
