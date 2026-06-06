@@ -1003,31 +1003,31 @@ function generateShareCard() {
   ).innerHTML = `
 
     <h1>
-      原神ランダム編成
+      原神ランダム編成結果
     </h1>
 
     <p>
-      📅 ${dateText}
+      ${dateText}
     </p>
 
     <p>
-      👥 出演キャラ数
+      出演キャラ数
       ${usedCharacters}人
     </p>
 
     <p>
-      🎲 編成数
+      編成数
       ${teamHistory.length}組
     </p>
 
     <p>
-      ⭐ 総評価
+      総評価
       ★${totalStars}
       / ${teamHistory.length * 9}
     </p>
 
     <p>
-      📈 平均評価
+      平均評価
       ★${averageStars}
     </p>
 
