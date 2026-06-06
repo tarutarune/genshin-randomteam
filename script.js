@@ -47,6 +47,49 @@ function playTick() {
 }
 
 
+function playSuccess() {
+
+  const audioContext =
+    new (
+      window.AudioContext ||
+      window.webkitAudioContext
+    )();
+
+  const oscillator =
+    audioContext.createOscillator();
+
+  const gainNode =
+    audioContext.createGain();
+
+  oscillator.connect(gainNode);
+
+  gainNode.connect(
+    audioContext.destination
+  );
+
+  oscillator.type = "triangle";
+
+  gainNode.gain.value = 0.05;
+
+  oscillator.frequency.setValueAtTime(
+    800,
+    audioContext.currentTime
+  );
+
+  oscillator.frequency.linearRampToValueAtTime(
+    1400,
+    audioContext.currentTime + 0.12
+  );
+
+  oscillator.start();
+
+  oscillator.stop(
+    audioContext.currentTime + 0.15
+  );
+}
+
+
+
 
 let lastSoundTime = 0;
 
@@ -205,6 +248,8 @@ playTick();
       currentTeam.push(
         finalCharacterId
       );
+
+playSuccess();
 
       if (
   currentTeam.length < 8 &&
