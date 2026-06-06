@@ -735,3 +735,40 @@ h2 {
 
   color: #b57cff;
 }
+
+
+
+
+#share-card {
+
+  max-width: 800px;
+
+  margin: 20px auto;
+
+  padding: 20px;
+
+  background: white;
+
+  color: black;
+}
+
+.share-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 40px);
+
+  gap: 4px;
+
+  margin-bottom: 12px;
+}
+
+.share-character {
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 4px;
+}
