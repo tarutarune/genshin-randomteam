@@ -1122,14 +1122,7 @@ document
   );
 
 
-document
-  .getElementById(
-    "save-share-button"
-  )
-  .addEventListener(
-    "click",
-    saveShareCardAsImage
-  );
+
 
 async function saveShareCardAsImage() {
 
@@ -1175,19 +1168,7 @@ document
 
 async function shareResult() {
 
-  async function shareResult() {
-
   alert("共有ボタン押された");
-
-  const totalStars =
-    teamHistory.reduce(
-      (sum, entry) =>
-        sum + entry.stars,
-      0
-    );
-
-  ...
-}
 
   const totalStars =
     teamHistory.reduce(
