@@ -10,8 +10,43 @@ const elementIcons = {
   "全元素": "icons/star.png"
 };
 
-const tickSound =
-  new Audio("sounds/stop.mp3");
+
+function playTick() {
+
+  const audioContext =
+    new (
+      window.AudioContext ||
+      window.webkitAudioContext
+    )();
+
+  const oscillator =
+    audioContext.createOscillator();
+
+  const gainNode =
+    audioContext.createGain();
+
+  oscillator.connect(gainNode);
+
+  gainNode.connect(
+    audioContext.destination
+  );
+
+  oscillator.type = "square";
+
+  oscillator.frequency.value =
+    1200;
+
+  gainNode.gain.value = 0.03;
+
+  oscillator.start();
+
+  oscillator.stop(
+    audioContext.currentTime +
+    0.015
+  );
+}
+
+
 
 let lastSoundTime = 0;
 
@@ -135,20 +170,7 @@ slot.dataset.spinning = "true";
       />
     `;
 
-const now = Date.now();
-
-if (now - lastSoundTime > 40) {
-
-  const sound =
-    new Audio("sounds/stop.mp3");
-
-  sound.volume = 0.3;
-
-  sound.play();
-
-  lastSoundTime = now;
-}
-
+playTick();
     
 
     count++;
