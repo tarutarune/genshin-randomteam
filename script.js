@@ -1120,3 +1120,100 @@ document
     "click",
     generateShareCard
   );
+
+
+document
+  .getElementById(
+    "save-share-button"
+  )
+  .addEventListener(
+    "click",
+    saveShareCardAsImage
+  );
+
+async function saveShareCardAsImage() {
+
+  const card =
+    document.getElementById(
+      "share-card"
+    );
+
+  if (!card) return;
+
+  const canvas =
+    await html2canvas(
+      card,
+      {
+        backgroundColor:
+          "#111111",
+        scale: 2
+      }
+    );
+
+  const link =
+    document.createElement("a");
+
+  link.download =
+    "genshin-random-team.png";
+
+  link.href =
+    canvas.toDataURL(
+      "image/png"
+    );
+
+  link.click();
+}
+
+
+
+document
+  .getElementById("share-button")
+  .addEventListener(
+    "click",
+    shareResult
+  );
+
+async function shareResult() {
+
+  const totalStars =
+    teamHistory.reduce(
+      (sum, entry) =>
+        sum + entry.stars,
+      0
+    );
+
+  const usedCharacters =
+    new Set(
+      teamHistory.flatMap(
+        entry => entry.team
+      )
+    ).size;
+
+  const shareText =
+
+`原神ランダム編成
+
+出演 ${usedCharacters}人
+編成 ${teamHistory.length}組
+評価 ★${totalStars}/${teamHistory.length * 9}
+
+${location.href}`;
+
+  if (navigator.share) {
+
+    await navigator.share({
+      title: "原神ランダム編成",
+      text: shareText
+    });
+
+  } else {
+
+    await navigator.clipboard.writeText(
+      shareText
+    );
+
+    alert(
+      "共有文をコピーしました"
+    );
+  }
+}
