@@ -784,22 +784,22 @@ h2 {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 40px);
-
-  gap: 4px;
+    repeat(4, 56px);
 
   justify-content: center;
 
-  margin-bottom: 12px;
+  gap: 8px;
+
+  margin-top: 12px;
 }
 
 .share-character {
 
-  width: 40px;
+  width: 56px;
 
-  height: 40px;
+  height: 56px;
 
-  border-radius: 4px;
+  border-radius: 8px;
 
   object-fit: cover;
 }
@@ -878,4 +878,28 @@ h2 {
   height: 100%;
 
   object-fit: cover;
+}
+
+
+.share-team-header {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+
+.share-stars {
+
+  color: #e0b14b;
 }
