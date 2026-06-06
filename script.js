@@ -55,45 +55,40 @@ function playSuccess() {
       window.webkitAudioContext
     )();
 
+  const oscillator =
+    audioContext.createOscillator();
+
   const gainNode =
     audioContext.createGain();
 
+  oscillator.connect(gainNode);
   gainNode.connect(
     audioContext.destination
   );
 
-  gainNode.gain.value = 0.05;
+  oscillator.type = "sine";
 
-  const osc1 =
-    audioContext.createOscillator();
-
-  osc1.type = "triangle";
-  osc1.frequency.value = 800;
-
-  osc1.connect(gainNode);
-
-  osc1.start();
-  osc1.stop(
-    audioContext.currentTime + 0.06
+  oscillator.frequency.setValueAtTime(
+    2200,
+    audioContext.currentTime
   );
 
-  const osc2 =
-    audioContext.createOscillator();
-
-  osc2.type = "triangle";
-  osc2.frequency.value = 1400;
-
-  osc2.connect(gainNode);
-
-  osc2.start(
-    audioContext.currentTime + 0.06
+  gainNode.gain.setValueAtTime(
+    0.08,
+    audioContext.currentTime
   );
 
-  osc2.stop(
-    audioContext.currentTime + 0.14
+  gainNode.gain.exponentialRampToValueAtTime(
+    0.001,
+    audioContext.currentTime + 0.3
+  );
+
+  oscillator.start();
+
+  oscillator.stop(
+    audioContext.currentTime + 0.3
   );
 }
-
 
 
 
