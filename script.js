@@ -1072,10 +1072,19 @@ function generateShareCard() {
                   );
 
                 return `
-                  <img
-                    src="${character.image}"
-                    class="share-character"
-                  >
+                  <div
+  class="
+    share-character
+    rarity-${character.rarity}
+  "
+>
+
+  <img
+    src="${character.image}"
+    class="share-character-image"
+  >
+
+</div>
                 `;
               }
             ).join("")}
