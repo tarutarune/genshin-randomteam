@@ -1044,22 +1044,20 @@ function generateShareCard() {
           class="share-team"
         >
 
-          <h3>
-            ${index + 1}組目
+          <div class="share-team-header">
 
-            ${"★".repeat(
-              entry.stars
-            )}
+  <span class="team-number">
+    ${index + 1}組目
+  </span>
 
-            ${"☆".repeat(
-              9 - entry.stars
-            )}
+  <div class="share-stars">
+    ${"★".repeat(entry.stars)}
+    ${"☆".repeat(9 - entry.stars)}
+  </div>
 
-          </h3>
+</div>
 
-          <div
-            class="share-grid"
-          >
+<div class="share-grid">
 
             ${entry.team.map(
               characterId => {
