@@ -86,10 +86,30 @@ function drawCharacter(slotIndex) {
   return;
 } 
 
-  const finalCharacterId =
+const finalCharacterId =
   randomPool.shift();
 
-if (!finalCharacterId) return;
+if (!finalCharacterId) {
+
+  const needCount =
+    8 - currentTeam.length;
+
+  if (needCount > 0) {
+
+    document.getElementById(
+      "message-area"
+    ).innerHTML = `
+      <button
+        class="fill-team-button"
+        onclick="fillRemainingTeam()"
+      >
+        ＋${needCount}人補充して完成
+      </button>
+    `;
+  }
+
+  return;
+}
 
  isDrawing = true;
   
@@ -890,3 +910,35 @@ document.getElementById(
   </div>
 `;
 }
+
+
+
+function fillRemainingTeam() {
+
+  const needCount =
+    8 - currentTeam.length;
+
+  const additionalMembers =
+    characters
+      .filter(
+        character =>
+          selectedCharacters.includes(
+            character.id
+          )
+      )
+      .sort(() => 0.5 - Math.random())
+      .slice(0, needCount)
+      .map(character => character.id);
+
+  randomPool.push(
+    ...additionalMembers
+  );
+
+  document.getElementById(
+    "message-area"
+  ).innerHTML = "";
+}
+
+
+window.fillRemainingTeam =
+  fillRemainingTeam;
