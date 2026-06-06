@@ -1168,8 +1168,6 @@ document
 
 async function shareResult() {
 
-  alert("共有ボタン押された");
-
   const totalStars =
     teamHistory.reduce(
       (sum, entry) =>
