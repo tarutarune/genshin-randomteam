@@ -1120,3 +1120,46 @@ document
     "click",
     generateShareCard
   );
+
+
+document
+  .getElementById(
+    "save-share-button"
+  )
+  .addEventListener(
+    "click",
+    saveShareCardAsImage
+  );
+
+async function saveShareCardAsImage() {
+
+  const card =
+    document.getElementById(
+      "share-card"
+    );
+
+  if (!card) return;
+
+  const canvas =
+    await html2canvas(
+      card,
+      {
+        backgroundColor:
+          "#111111",
+        scale: 2
+      }
+    );
+
+  const link =
+    document.createElement("a");
+
+  link.download =
+    "genshin-random-team.png";
+
+  link.href =
+    canvas.toDataURL(
+      "image/png"
+    );
+
+  link.click();
+}
