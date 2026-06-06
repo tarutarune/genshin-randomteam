@@ -481,12 +481,6 @@ h2 {
     historyPulse 0.6s ease;
 }
 
-.history-pulse {
-
-  animation:
-    historyPulse 0.6s ease;
-}
-
 #history-count {
 
   display: inline-block;
@@ -736,9 +730,6 @@ h2 {
   color: #b57cff;
 }
 
-
-
-
 #share-card {
 
   max-width: 800px;
@@ -761,6 +752,8 @@ h2 {
 
   gap: 4px;
 
+  justify-content: center;
+
   margin-bottom: 12px;
 }
 
@@ -771,4 +764,22 @@ h2 {
   height: 40px;
 
   border-radius: 4px;
+
+  object-fit: cover;
+}
+
+
+#close-share-card {
+
+  float: right;
+
+  border: none;
+
+  background: none;
+
+  color: #666;
+
+  font-size: 24px;
+
+  cursor: pointer;
 }
