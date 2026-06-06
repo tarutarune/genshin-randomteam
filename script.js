@@ -963,3 +963,139 @@ function fillRemainingTeam() {
 
 window.fillRemainingTeam =
   fillRemainingTeam;
+
+
+
+function generateShareCard() {
+
+  const totalStars =
+    teamHistory.reduce(
+      (sum, entry) =>
+        sum + entry.stars,
+      0
+    );
+
+  const averageStars =
+    teamHistory.length > 0
+      ? (
+          totalStars /
+          teamHistory.length
+        ).toFixed(1)
+      : 0;
+
+  const usedCharacters =
+    new Set(
+      teamHistory.flatMap(
+        entry => entry.team
+      )
+    ).size;
+
+  const now =
+    new Date();
+
+  const dateText =
+    now.toLocaleString(
+      "ja-JP"
+    );
+
+  document.getElementById(
+    "share-card"
+  ).innerHTML = `
+
+    <h1>
+      原神ランダム編成
+    </h1>
+
+    <p>
+      📅 ${dateText}
+    </p>
+
+    <p>
+      👥 出演キャラ数
+      ${usedCharacters}人
+    </p>
+
+    <p>
+      🎲 編成数
+      ${teamHistory.length}組
+    </p>
+
+    <p>
+      ⭐ 総評価
+      ★${totalStars}
+      / ${teamHistory.length * 9}
+    </p>
+
+    <p>
+      📈 平均評価
+      ★${averageStars}
+    </p>
+
+    <hr>
+
+    ${teamHistory.map(
+      (entry, index) => `
+
+        <div
+          class="share-team"
+        >
+
+          <h3>
+            ${index + 1}組目
+
+            ${"★".repeat(
+              entry.stars
+            )}
+
+            ${"☆".repeat(
+              9 - entry.stars
+            )}
+
+          </h3>
+
+          <div
+            class="share-grid"
+          >
+
+            ${entry.team.map(
+              characterId => {
+
+                const character =
+                  characters.find(
+                    c =>
+                      c.id ===
+                      characterId
+                  );
+
+                return `
+                  <img
+                    src="${character.image}"
+                    class="share-character"
+                  >
+                `;
+              }
+            ).join("")}
+
+          </div>
+
+        </div>
+
+      `
+    ).join("")}
+  `;
+
+  document.getElementById(
+    "share-card"
+  ).style.display =
+    "block";
+}
+
+
+document
+  .getElementById(
+    "preview-share-button"
+  )
+  .addEventListener(
+    "click",
+    generateShareCard
+  );
