@@ -89,27 +89,7 @@ function drawCharacter(slotIndex) {
 const finalCharacterId =
   randomPool.shift();
 
-if (!finalCharacterId) {
-
-  const needCount =
-    8 - currentTeam.length;
-
-  if (needCount > 0) {
-
-    document.getElementById(
-      "message-area"
-    ).innerHTML = `
-      <button
-        class="fill-team-button"
-        onclick="fillRemainingTeam()"
-      >
-        ＋${needCount}人補充して完成
-      </button>
-    `;
-  }
-
-  return;
-}
+if (!finalCharacterId) return;
 
  isDrawing = true;
   
@@ -179,6 +159,26 @@ slot.dataset.spinning = "true";
       currentTeam.push(
         finalCharacterId
       );
+
+      if (
+  currentTeam.length < 8 &&
+  randomPool.length === 0
+) {
+
+  const needCount =
+    8 - currentTeam.length;
+
+  document.getElementById(
+    "message-area"
+  ).innerHTML = `
+      <button
+        class="fill-team-button"
+        onclick="fillRemainingTeam()"
+      >
+        ＋${needCount}人補充して完成
+      </button>
+  `;
+}
 
       selectedCharacters =
   selectedCharacters.filter(
@@ -669,76 +669,6 @@ saveHistory();
 window.setStars = setStars;
 
 
-function fillRemainingTeam() {
-  
-  document.getElementById("message-area")
-  .innerHTML = "";
-
-  const remainTeam =
-    [...selectedCharacters];
-
-  const needCount =
-    8 - remainTeam.length;
-
-  const shuffled =
-    [...characters]
-      .sort(() => 0.5 - Math.random());
-
-  const additionalMembers =
-    shuffled
-      .map(character => character.id)
-      .slice(0, needCount);
-
-  currentTeam = [
-    ...remainTeam,
-    ...additionalMembers
-  ];
-
-
-  startTeamBuild();
-
-  const slots =
-    document.querySelectorAll(
-      "#result .empty-slot"
-    );
-
-  for (let i = 0; i < 8; i++) {
-
-    setTimeout(() => {
-
-      const character =
-        characters.find(
-          c =>
-            c.id === currentTeam[i]
-        );
-
-      if (!character) return;
-
-      slots[i].outerHTML = `
-        <div
-          class="
-            character-card
-            rarity-${character.rarity}
-            reveal-animation
-          "
-        >
-
-          <img
-            src="${character.image}"
-            class="character-image"
-          />
-
-          <img
-            src="${elementIcons[character.element]}"
-            class="element-icon"
-          />
-
-        </div>
-      `;
-
-    }, i * 350);
-  }
-}
 
 window.fillRemainingTeam =
   fillRemainingTeam;
