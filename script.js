@@ -10,6 +10,10 @@ const elementIcons = {
   "全元素": "icons/star.png"
 };
 
+const tickSound =
+  new Audio("sounds/stop.mp3");
+
+
 let selectedCharacters =
   JSON.parse(
     localStorage.getItem(
@@ -126,6 +130,11 @@ slot.dataset.spinning = "true";
         class="element-icon"
       />
     `;
+
+    tickSound.currentTime = 0;
+tickSound.play();
+
+    
 
     count++;
 
