@@ -1009,33 +1009,33 @@ function generateShareCard() {
 </button>
 
   <div id="share-card">
-  <h1>原神ランダム編成結果</h1>
+  <h1>原神ランダム編成</h1>
 </div>
 
-    <p>
-      ${dateText}
-    </p>
+<div class="share-date">
+  ${dateText}
+</div>
 
-    <p>
-      出演キャラ数
-      ${usedCharacters}人
-    </p>
+<div class="share-summary">
 
-    <p>
-      編成数
-      ${teamHistory.length}組
-    </p>
+  <div>
+    出演 ${usedCharacters}人
+  </div>
 
-    <p>
-      総評価
-      ★${totalStars}
-      / ${teamHistory.length * 9}
-    </p>
+  <div>
+    編成 ${teamHistory.length}組
+  </div>
 
-    <p>
-      平均評価
-      ★${averageStars}
-    </p>
+  <div>
+    評価 ★${totalStars}
+    / ${teamHistory.length * 9}
+  </div>
+
+  <div>
+    平均 ★${averageStars}
+  </div>
+
+</div>
 
     <hr>
 
