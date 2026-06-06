@@ -1008,9 +1008,9 @@ function generateShareCard() {
   ✕
 </button>
 
-    <h1>
-      原神ランダム編成結果
-    </h1>
+  <div id="share-card">
+  <h1>原神ランダム編成結果</h1>
+</div>
 
     <p>
       ${dateText}
