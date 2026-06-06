@@ -758,9 +758,13 @@ h2 {
 
 #share-card h1 {
 
-  font-size: 32px;
-
   color: #e0b14b;
+
+  font-size: 24px;
+
+  line-height: 1.3;
+
+  margin-bottom: 20px;
 }
 
 #share-card hr {
@@ -814,4 +818,32 @@ h2 {
   font-size: 24px;
 
   cursor: pointer;
+}
+
+
+.share-date {
+
+  margin-bottom: 20px;
+
+  font-size: 18px;
+
+  color: #ccc;
+}
+
+.share-summary {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+
+  max-width: 400px;
+
+  margin: 0 auto 24px;
+
+  font-size: 20px;
+
+  font-weight: bold;
 }
