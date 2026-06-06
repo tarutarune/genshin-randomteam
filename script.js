@@ -13,6 +13,8 @@ const elementIcons = {
 const tickSound =
   new Audio("sounds/stop.mp3");
 
+let lastSoundTime = 0;
+
 
 let selectedCharacters =
   JSON.parse(
@@ -133,12 +135,19 @@ slot.dataset.spinning = "true";
       />
     `;
 
-const sound =
-  new Audio("sounds/stop.mp3");
+const now = Date.now();
 
-sound.volume = 0.3;
+if (now - lastSoundTime > 40) {
 
-sound.play();
+  const sound =
+    new Audio("sounds/stop.mp3");
+
+  sound.volume = 0.3;
+
+  sound.play();
+
+  lastSoundTime = now;
+}
 
     
 
