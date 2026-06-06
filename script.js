@@ -1002,6 +1002,12 @@ function generateShareCard() {
     "share-card"
   ).innerHTML = `
 
+  <button
+  id="close-share-card"
+>
+  ✕
+</button>
+
     <h1>
       原神ランダム編成結果
     </h1>
@@ -1084,6 +1090,22 @@ function generateShareCard() {
     ).join("")}
   `;
 
+  document
+  .getElementById(
+    "close-share-card"
+  )
+  .addEventListener(
+    "click",
+    () => {
+
+      document.getElementById(
+        "share-card"
+      ).style.display =
+        "none";
+    }
+  );
+
+  
   document.getElementById(
     "share-card"
   ).style.display =
