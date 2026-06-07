@@ -1139,12 +1139,21 @@ canvas.toBlob(blob => {
   const url =
     URL.createObjectURL(blob);
 
-  const isIOS =
-    /iPad|iPhone|iPod/.test(
+  const isIPhone =
+    /iPhone|iPod/.test(
       navigator.userAgent
     );
 
-  if (isIOS) {
+  const isIPad =
+    /iPad/.test(
+      navigator.userAgent
+    );
+
+  if (isIPhone) {
+
+    location.href = url;
+
+  } else if (isIPad) {
 
     window.open(url, "_blank");
 
@@ -1161,7 +1170,7 @@ canvas.toBlob(blob => {
     link.click();
   }
 
-}, "image/png");
+}, "image/png");;
 }
 
 
