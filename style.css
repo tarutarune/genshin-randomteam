@@ -928,12 +928,17 @@ h2 {
   top: 12px;
   right: 12px;
 
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
 
-  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  background: rgba(0,0,0,0.7);
+  font-size: 32px;
+  line-height: 1;
+
+  background: rgba(0,0,0,0.8);
 
   color: white;
 
@@ -942,9 +947,9 @@ h2 {
   border-radius: 12px;
 
   cursor: pointer;
-
-  z-index: 10;
 }
+
+
 #save-share-button {
 
   margin-top: 20px;
