@@ -995,3 +995,22 @@ h2 {
 
   gap: 16px;
 }
+
+
+
+
+.disclaimer {
+
+  margin-top: 48px;
+
+  padding-top: 24px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.15);
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  color: #888;
+}
