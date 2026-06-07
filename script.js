@@ -1002,12 +1002,7 @@ function generateShareCard() {
     "share-card"
   ).innerHTML = `
 
-  <button
-  id="close-share-card"
->
-  ✕
-</button>
-
+  
   <h1>原神ランダム編成</h1>
 
 <div class="share-date">
