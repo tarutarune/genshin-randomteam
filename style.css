@@ -983,36 +983,5 @@ h2 {
 #show-share-card-button,
 #share-button {
 
-  background: #111;
-
-  color: white;
-
-  border: 1px solid white;
-
-  border-radius: 5px;
-
-  font-size: 20px;
-
-  font-weight: 500;
-
-  min-height: 56px;
-
-  padding: 0 24px;
-
-  margin: 0 8px;
-
-  box-shadow:
-    3px 3px 0 white;
-
-  transition: .1s;
-}
-
-#show-share-card-button:active,
-#share-button:active {
-
-  transform:
-    translate(2px,2px);
-
-  box-shadow:
-    1px 1px 0 white;
+  font-size: 18px;
 }
