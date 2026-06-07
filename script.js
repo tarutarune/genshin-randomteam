@@ -1134,18 +1134,24 @@ async function saveShareCardAsImage() {
       }
     );
 
+canvas.toBlob(blob => {
+
+  const url =
+    URL.createObjectURL(blob);
+
   const link =
     document.createElement("a");
+
+  link.href = url;
 
   link.download =
     "genshin-random-team.png";
 
-  link.href =
-    canvas.toDataURL(
-      "image/png"
-    );
-
   link.click();
+
+  URL.revokeObjectURL(url);
+
+}, "image/png");
 }
 
 

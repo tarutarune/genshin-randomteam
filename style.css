@@ -923,24 +923,32 @@ h2 {
 
 #close-share-modal {
 
-  position: sticky;
+  position: absolute;
 
-  top: 10px;
+  top: 12px;
+  right: 12px;
 
-  float: right;
+  width: 56px;
+  height: 56px;
 
-  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 32px;
+  line-height: 1;
+
+  background: rgba(0,0,0,0.8);
 
   color: white;
 
-  border: 1px solid #444;
+  border: 1px solid #666;
 
-  border-radius: 6px;
-
-  padding: 6px 12px;
+  border-radius: 12px;
 
   cursor: pointer;
 }
+
 
 #save-share-button {
 
@@ -963,4 +971,7 @@ h2 {
   display: none;
 }
 
+#close-share-modal:active {
 
+  transform: scale(0.95);
+}
