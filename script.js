@@ -1003,7 +1003,7 @@ function generateShareCard() {
   ).innerHTML = `
 
   
-  <h1>原神ランダム編成</h1>
+  <h1挑戦結果</h1>
 
 <div class="share-date">
   ${dateText}
