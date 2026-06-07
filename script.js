@@ -1139,17 +1139,27 @@ canvas.toBlob(blob => {
   const url =
     URL.createObjectURL(blob);
 
-  const link =
-    document.createElement("a");
+  const isIOS =
+    /iPad|iPhone|iPod/.test(
+      navigator.userAgent
+    );
 
-  link.href = url;
+  if (isIOS) {
 
-  link.download =
-    "genshin-random-team.png";
+    window.open(url, "_blank");
 
-  link.click();
+  } else {
 
-  URL.revokeObjectURL(url);
+    const link =
+      document.createElement("a");
+
+    link.href = url;
+
+    link.download =
+      "genshin-random-team.png";
+
+    link.click();
+  }
 
 }, "image/png");
 }
