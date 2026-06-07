@@ -1084,20 +1084,7 @@ function generateShareCard() {
     ).join("")}
   `;
 
-  document
-  .getElementById(
-    "close-share-card"
-  )
-  .addEventListener(
-    "click",
-    () => {
 
-      document.getElementById(
-        "share-card"
-      ).style.display =
-        "none";
-    }
-  );
 
   
   document.getElementById(
@@ -1109,7 +1096,7 @@ function generateShareCard() {
 
 document
   .getElementById(
-    "preview-share-button"
+    "show-share-card-button"
   )
   .addEventListener(
     "click",
