@@ -958,3 +958,9 @@ h2 {
 
   cursor: pointer;
 }
+
+#share-modal {
+  display: none;
+}
+
+
