@@ -740,8 +740,8 @@ h2 {
 }
 
 #share-card {
- width: 100%;
-  max-width: 480px;
+ width: 90%;
+  max-width: 450px;
 
   margin: 20px auto;
 
