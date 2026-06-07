@@ -985,3 +985,13 @@ h2 {
 
   font-size: 18px;
 }
+
+
+.share-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+}
