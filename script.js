@@ -1106,7 +1106,7 @@ function generateShareCard() {
 
   
   document.getElementById(
-    "share-card"
+    "share-modal"
   ).style.display =
     "block";
 }
@@ -1119,6 +1119,15 @@ document
   .addEventListener(
     "click",
     generateShareCard
+  );
+
+document
+  .getElementById(
+    "save-share-button"
+  )
+  .addEventListener(
+    "click",
+    saveShareCardAsImage
   );
 
 
@@ -1214,3 +1223,22 @@ ${location.href}`;
 
 
 window.shareResult = shareResult;
+
+
+
+
+
+document
+  .getElementById(
+    "close-share-modal"
+  )
+  .addEventListener(
+    "click",
+    () => {
+
+      document.getElementById(
+        "share-modal"
+      ).style.display =
+        "none";
+    }
+  );
