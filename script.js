@@ -1003,7 +1003,7 @@ function generateShareCard() {
   ).innerHTML = `
 
   
-  <h1挑戦結果</h1>
+  <h1>挑戦結果</h1>
 
 <div class="share-date">
   ${dateText}
