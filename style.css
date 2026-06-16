@@ -235,9 +235,16 @@ h2 {
 
   border-radius: 10px;
 
-  background: #999;
+  background-image:
+    url("icons/Chusen.png");
 
-  opacity: 0.35;
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
