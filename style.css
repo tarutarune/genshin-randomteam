@@ -235,16 +235,19 @@ h2 {
 
   border-radius: 10px;
 
-  background-image:
-    url("icons/Chusen.png");
+  display: flex;
 
-  background-size: cover;
+  justify-content: center;
 
-  background-position: center;
+  align-items: center;
 
-  background-repeat: no-repeat;
+  background: rgba(255,255,255,0.03);
 
-  opacity: 0.8;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  font-size: 40px;
+
+  color: rgba(255,255,255,0.12);
 }
 
 @media (max-width: 768px) {
