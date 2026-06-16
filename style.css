@@ -1024,3 +1024,14 @@ h2 {
 
   color: #888;
 }
+
+
+
+.star-divider {
+
+  color: #666;
+
+  margin: 0 6px;
+
+  user-select: none;
+}
