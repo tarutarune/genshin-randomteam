@@ -141,7 +141,9 @@ function startTeamBuild() {
   class="empty-slot"
   data-slot="${index}"
   onclick="drawCharacter(${index})"
-></div>
+>
+  ✦
+</div>
     `).join("");
 }
 
