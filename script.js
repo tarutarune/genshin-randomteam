@@ -996,11 +996,15 @@ window.fillRemainingTeam =
 function generateShareCard() {
 
   const totalStars =
-    teamHistory.reduce(
-      (sum, entry) =>
-        sum + entry.stars,
-      0
-    );
+  teamHistory.reduce(
+    (sum, entry) =>
+      sum +
+      entry.stars.reduce(
+        (a, b) => a + b,
+        0
+      ),
+    0
+  );
 
   const averageStars =
     teamHistory.length > 0
@@ -1101,9 +1105,14 @@ function generateShareCard() {
   </span>
 
   <div class="share-stars">
-    ${"★".repeat(entry.stars)}
-    ${"☆".repeat(9 - entry.stars)}
-  </div>
+
+  ${entry.stars.map(
+    stars =>
+      "★".repeat(stars) +
+      "☆".repeat(3 - stars)
+  ).join("｜")}
+
+</div>
 
 </div>
 
