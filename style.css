@@ -521,18 +521,24 @@ h2 {
 
   margin-top: 12px;
 
-  font-size: 28px;
+  font-size: 22px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 4px;
+
+  flex-wrap: nowrap;
 }
 
 .star {
 
   cursor: pointer;
 
-  color: #666;
-
-  transition:
-    transform 0.15s,
-    color 0.15s;
+  line-height: 1;
 }
 
 .star:hover {
@@ -545,6 +551,16 @@ h2 {
   color: #e0b14b;
 }
 
+.star-divider {
+
+  color: #666;
+
+  margin: 0 4px;
+
+  font-size: 18px;
+
+  user-select: none;
+}
 
 #message-area {
 
