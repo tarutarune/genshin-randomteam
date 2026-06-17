@@ -707,7 +707,7 @@ function renderHistory() {
     >★</span>
   `).join("")}
 
-</div>>
+</div>
 
         </div>
       `;
