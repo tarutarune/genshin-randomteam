@@ -572,7 +572,7 @@ function saveTeam() {
 
   teamHistory.push({
   team: [...currentTeam],
-  stars: 0
+  stars: [0, 0, 0]
 });
 
 saveHistory();
@@ -682,32 +682,36 @@ function renderHistory() {
           
 <div class="star-rating">
 
-  ${[1,2,3].map(star => `
-    <span
-      class="star ${star <= entry.stars ? 'filled' : ''}"
-      onclick="setStars(${index}, ${star})"
-    >★</span>
+  ${[0,1,2].map(floor => `
+
+    <div class="floor-stars">
+
+      ${[1,2,3].map(star => `
+
+        <span
+          class="star ${
+            star <= entry.stars[floor]
+              ? "filled"
+              : ""
+          }"
+          onclick="
+            setStars(
+              ${index},
+              ${floor},
+              ${star}
+            )
+          "
+        >
+          ★
+        </span>
+
+      `).join("")}
+
+    </div>
+
   `).join("")}
 
-  <span class="star-divider">｜</span>
-
-  ${[4,5,6].map(star => `
-    <span
-      class="star ${star <= entry.stars ? 'filled' : ''}"
-      onclick="setStars(${index}, ${star})"
-    >★</span>
-  `).join("")}
-
-  <span class="star-divider">｜</span>
-
-  ${[7,8,9].map(star => `
-    <span
-      class="star ${star <= entry.stars ? 'filled' : ''}"
-      onclick="setStars(${index}, ${star})"
-    >★</span>
-  `).join("")}
-
-</div>>
+</div>
 
         </div>
       `;
@@ -722,7 +726,11 @@ function renderHistory() {
 const totalStars =
   teamHistory.reduce(
     (sum, entry) =>
-      sum + entry.stars,
+      sum +
+      entry.stars.reduce(
+        (a, b) => a + b,
+        0
+      ),
     0
   );
 
@@ -753,22 +761,27 @@ document
     }
   );
   
-  
-function setStars(teamIndex, stars) {
+function setStars(
+  teamIndex,
+  floor,
+  stars
+) {
 
   if (
-    teamHistory[teamIndex].stars === stars
+    teamHistory[teamIndex]
+      .stars[floor] === stars
   ) {
 
-    teamHistory[teamIndex].stars =
-      stars - 1;
+    teamHistory[teamIndex]
+      .stars[floor] = stars - 1;
 
   } else {
 
-    teamHistory[teamIndex].stars =
-      stars;
+    teamHistory[teamIndex]
+      .stars[floor] = stars;
   }
-saveHistory();
+
+  saveHistory();
   renderHistory();
 }
 

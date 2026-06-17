@@ -1051,3 +1051,22 @@ h2 {
 
   user-select: none;
 }
+
+
+.floor-stars {
+
+  display: flex;
+
+  gap: 2px;
+}
+
+.star-rating {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
