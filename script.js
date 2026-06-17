@@ -572,7 +572,7 @@ function saveTeam() {
 
   teamHistory.push({
   team: [...currentTeam],
-  stars: 0
+  stars: [0, 0, 0]
 });
 
 saveHistory();
@@ -722,7 +722,11 @@ function renderHistory() {
 const totalStars =
   teamHistory.reduce(
     (sum, entry) =>
-      sum + entry.stars,
+      sum +
+      entry.stars.reduce(
+        (a, b) => a + b,
+        0
+      ),
     0
   );
 
