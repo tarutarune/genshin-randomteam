@@ -682,29 +682,33 @@ function renderHistory() {
           
 <div class="star-rating">
 
-  ${[1,2,3].map(star => `
-    <span
-      class="star ${star <= entry.stars ? 'filled' : ''}"
-      onclick="setStars(${index}, ${star})"
-    >★</span>
-  `).join("")}
+  ${[0,1,2].map(floor => `
 
-  <span class="star-divider">｜</span>
+    <div class="floor-stars">
 
-  ${[4,5,6].map(star => `
-    <span
-      class="star ${star <= entry.stars ? 'filled' : ''}"
-      onclick="setStars(${index}, ${star})"
-    >★</span>
-  `).join("")}
+      ${[1,2,3].map(star => `
 
-  <span class="star-divider">｜</span>
+        <span
+          class="star ${
+            star <= entry.stars[floor]
+              ? "filled"
+              : ""
+          }"
+          onclick="
+            setStars(
+              ${index},
+              ${floor},
+              ${star}
+            )
+          "
+        >
+          ★
+        </span>
 
-  ${[7,8,9].map(star => `
-    <span
-      class="star ${star <= entry.stars ? 'filled' : ''}"
-      onclick="setStars(${index}, ${star})"
-    >★</span>
+      `).join("")}
+
+    </div>
+
   `).join("")}
 
 </div>
@@ -757,22 +761,27 @@ document
     }
   );
   
-  
-function setStars(teamIndex, stars) {
+function setStars(
+  teamIndex,
+  floor,
+  stars
+) {
 
   if (
-    teamHistory[teamIndex].stars === stars
+    teamHistory[teamIndex]
+      .stars[floor] === stars
   ) {
 
-    teamHistory[teamIndex].stars =
-      stars - 1;
+    teamHistory[teamIndex]
+      .stars[floor] = stars - 1;
 
   } else {
 
-    teamHistory[teamIndex].stars =
-      stars;
+    teamHistory[teamIndex]
+      .stars[floor] = stars;
   }
-saveHistory();
+
+  saveHistory();
   renderHistory();
 }
 
