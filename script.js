@@ -688,7 +688,7 @@ function renderHistory() {
 
       ${[1,2,3].map(star => `
 
-<span>
+<span
   class="star ${
     star <= entry.stars[floor]
       ? "filled"
