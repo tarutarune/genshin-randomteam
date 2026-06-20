@@ -375,6 +375,8 @@ function toggleCharacter(characterId) {
   renderCharacters();
   saveSelectedCharacters();
 
+  startTeamBuild();
+
 }
 
 window.toggleCharacter = toggleCharacter;
