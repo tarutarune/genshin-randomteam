@@ -10,6 +10,20 @@ const elementIcons = {
   "全元素": "icons/star.png"
 };
 
+function toggleHelp() {
+
+  const help =
+    document.getElementById(
+      "help-text"
+    );
+
+  help.style.display =
+    help.style.display === "none"
+      ? "block"
+      : "none";
+}
+
+
 
 function playTick() {
 
