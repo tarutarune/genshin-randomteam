@@ -1221,11 +1221,15 @@ document
 async function shareResult() {
 
   const totalStars =
-    teamHistory.reduce(
-      (sum, entry) =>
-        sum + entry.stars,
-      0
-    );
+  teamHistory.reduce(
+    (sum, entry) =>
+      sum +
+      entry.stars.reduce(
+        (a, b) => a + b,
+        0
+      ),
+    0
+  );
 
   const usedCharacters =
     new Set(
