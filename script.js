@@ -10,6 +10,13 @@ const elementIcons = {
   "全元素": "icons/star.png"
 };
 
+const audioContext =
+  new (
+    window.AudioContext ||
+    window.webkitAudioContext
+  )();
+
+
 function toggleHelp() {
 
   if (typeof gtag !== "undefined") {
@@ -32,10 +39,7 @@ function toggleHelp() {
 function playTick() {
 
   const audioContext =
-    new (
-      window.AudioContext ||
-      window.webkitAudioContext
-    )();
+
 
   const oscillator =
     audioContext.createOscillator();
@@ -67,11 +71,6 @@ function playTick() {
 
 function playSuccess() {
 
-  const audioContext =
-    new (
-      window.AudioContext ||
-      window.webkitAudioContext
-    )();
 
   const oscillator =
     audioContext.createOscillator();
