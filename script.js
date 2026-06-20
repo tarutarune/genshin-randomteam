@@ -688,22 +688,26 @@ function renderHistory() {
 
       ${[1,2,3].map(star => `
 
-        <span
-          class="star ${
-            star <= entry.stars[floor]
-              ? "filled"
-              : ""
-          }"
-          onclick="
-            setStars(
-              ${index},
-              ${floor},
-              ${star}
-            )
-          "
-        >
-          ★
-        </span>
+<span>
+  class="star ${
+    star <= entry.stars[floor]
+      ? "filled"
+      : ""
+  }"
+  onclick="
+    setStars(
+      ${index},
+      ${floor},
+      ${star}
+    )
+  "
+>
+  ${
+    star <= entry.stars[floor]
+      ? "★"
+      : "☆"
+  }
+</span>
 
       `).join("")}
 
