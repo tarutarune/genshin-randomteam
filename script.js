@@ -192,6 +192,11 @@ const finalCharacterId =
 
 if (!finalCharacterId) return;
 
+  if (typeof gtag !== "undefined") {
+  gtag("event", "draw_character");
+}
+  
+
  isDrawing = true;
   
 slot.dataset.spinning = "true";
@@ -585,10 +590,7 @@ function saveTeam() {
   if (currentTeam.length === 0) return;
 
   if (typeof gtag !== "undefined") {
-  gtag("event", "next_team", {
-    event_category: "team",
-    event_label: "次の組へ"
-  });
+  gtag("event", "next_team");
 }
 
   teamHistory.push({
@@ -1183,6 +1185,10 @@ async function saveShareCardAsImage() {
       "share-card"
     );
 
+if (typeof gtag !== "undefined") {
+  gtag("event", "save_image");
+}
+  
   if (!card) return;
 
   const canvas =
@@ -1273,6 +1279,10 @@ async function shareResult() {
 
 ランダム編成メーカー:
 ${location.href}`;
+
+  if (typeof gtag !== "undefined") {
+  gtag("event", "share_result");
+}
 
   if (navigator.share) {
 
