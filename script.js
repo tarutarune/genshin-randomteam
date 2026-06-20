@@ -688,7 +688,7 @@ function renderHistory() {
 
       ${[1,2,3].map(star => `
 
-        <span
+<span
   class="star ${
     star <= entry.stars[floor]
       ? "filled"
@@ -1244,7 +1244,7 @@ async function shareResult() {
 
   const shareText =
 
-`原神ランダム編成
+`挑戦結果
 
 出演 ${usedCharacters}人
 編成 ${teamHistory.length}組
