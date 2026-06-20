@@ -1250,6 +1250,7 @@ async function shareResult() {
 編成 ${teamHistory.length}組
 評価 ★${totalStars}/${teamHistory.length * 9}
 
+ランダム編成メーカー:
 ${location.href}`;
 
   if (navigator.share) {

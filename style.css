@@ -38,6 +38,17 @@ h2 {
   font-size: 40px;
 }
 
+.sub-title {
+
+  margin-top: -10px;
+
+  margin-bottom: 24px;
+
+  color: #aaa;
+
+  font-size: 16px;
+}
+
 #random-button,
 #save-button {
 
