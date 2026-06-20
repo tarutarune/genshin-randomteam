@@ -12,6 +12,10 @@ const elementIcons = {
 
 function toggleHelp() {
 
+  if (typeof gtag !== "undefined") {
+    gtag("event", "open_help");
+  }
+
   const help =
     document.getElementById(
       "help-text"
