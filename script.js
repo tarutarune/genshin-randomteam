@@ -12,6 +12,10 @@ const elementIcons = {
 
 function toggleHelp() {
 
+  if (typeof gtag !== "undefined") {
+    gtag("event", "open_help");
+  }
+
   const help =
     document.getElementById(
       "help-text"
@@ -191,6 +195,11 @@ const finalCharacterId =
   randomPool.shift();
 
 if (!finalCharacterId) return;
+
+  if (typeof gtag !== "undefined") {
+  gtag("event", "draw_character");
+}
+  
 
  isDrawing = true;
   
@@ -583,6 +592,10 @@ function showTab(tab) {
 function saveTeam() {
 
   if (currentTeam.length === 0) return;
+
+  if (typeof gtag !== "undefined") {
+  gtag("event", "next_team");
+}
 
   teamHistory.push({
   team: [...currentTeam],
@@ -1176,6 +1189,10 @@ async function saveShareCardAsImage() {
       "share-card"
     );
 
+if (typeof gtag !== "undefined") {
+  gtag("event", "save_image");
+}
+  
   if (!card) return;
 
   const canvas =
@@ -1266,6 +1283,10 @@ async function shareResult() {
 
 ランダム編成メーカー:
 ${location.href}`;
+
+  if (typeof gtag !== "undefined") {
+  gtag("event", "share_result");
+}
 
   if (navigator.share) {
 
