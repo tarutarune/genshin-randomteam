@@ -584,6 +584,13 @@ function saveTeam() {
 
   if (currentTeam.length === 0) return;
 
+  if (typeof gtag !== "undefined") {
+  gtag("event", "next_team", {
+    event_category: "team",
+    event_label: "次の組へ"
+  });
+}
+
   teamHistory.push({
   team: [...currentTeam],
   stars: [0, 0, 0]
