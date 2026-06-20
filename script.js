@@ -38,9 +38,6 @@ function toggleHelp() {
 
 function playTick() {
 
-  const audioContext =
-
-
   const oscillator =
     audioContext.createOscillator();
 
@@ -67,7 +64,6 @@ function playTick() {
     0.015
   );
 }
-
 
 function playSuccess() {
 
