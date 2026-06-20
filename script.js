@@ -145,9 +145,7 @@ document.getElementById("save-button")
 
 function startTeamBuild() {
 
-  randomPool =
-    [...selectedCharacters]
-      .sort(() => 0.5 - Math.random());
+  randomPool = [];
 
   currentTeam = [];
 
@@ -156,15 +154,14 @@ function startTeamBuild() {
   document.getElementById("result").innerHTML =
     [...Array(8)].map((_, index) => `
       <div
-  class="empty-slot"
-  data-slot="${index}"
-  onclick="drawCharacter(${index})"
->
-  ✦
-</div>
+        class="empty-slot"
+        data-slot="${index}"
+        onclick="drawCharacter(${index})"
+      >
+        ✦
+      </div>
     `).join("");
 }
-
 
 function drawCharacter(slotIndex) {
 
@@ -191,6 +188,12 @@ function drawCharacter(slotIndex) {
   return;
 } 
 
+ if (randomPool.length === 0) {
+  randomPool =
+    [...selectedCharacters]
+      .sort(() => 0.5 - Math.random());
+}
+  
 const finalCharacterId =
   randomPool.shift();
 
@@ -375,7 +378,6 @@ function toggleCharacter(characterId) {
   renderCharacters();
   saveSelectedCharacters();
 
-  startTeamBuild();
 
 }
 
