@@ -1032,5 +1032,14 @@ const characters = [
     element: "氷",
     weapon: "長柄武器",
     image: "images/Lohen.png"
+  },
+
+    {
+    id: "Sandrone",
+    name: "サンドローネ",
+    rarity: 5,
+    element: "氷",
+    weapon: “両手剣",
+    image: "images/Sandrone.png"
   }
 ];
