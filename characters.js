@@ -1039,7 +1039,7 @@ const characters = [
     name: "サンドローネ",
     rarity: 5,
     element: "氷",
-    weapon: “両手剣",
+    weapon: "両手剣",
     image: "images/Sandrone.png"
   }
 ];
