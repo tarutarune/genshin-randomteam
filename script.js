@@ -118,7 +118,10 @@ let selectedCharacters =
     character => character.id
   );
 
-let currentTeam = []
+let remainingCharacters =
+  [...selectedCharacters];
+
+let currentTeam = [];
 
 let randomPool = [];
 
