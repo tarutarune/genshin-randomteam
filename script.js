@@ -154,6 +154,12 @@ function startTeamBuild() {
 
  console.log("startTeamBuild実行");
 
+  console.log(
+  "start",
+  selectedCharacters.length,
+  [...selectedCharacters]
+);
+
   initialSelectedCharacters = [...selectedCharacters];
 
   remainingCharacters = [...selectedCharacters];
@@ -406,6 +412,14 @@ function toggleCharacter(characterId) {
   }
 
   renderCharacters();
+
+  console.log(
+  "toggle",
+  selectedCharacters.length,
+  [...selectedCharacters]
+);
+
+  
   saveSelectedCharacters();
 
 
