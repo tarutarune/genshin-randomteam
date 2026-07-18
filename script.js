@@ -699,8 +699,6 @@ resetTeamSlots();
 
 renderCharacters();
 
-();
-
   
 }
 
