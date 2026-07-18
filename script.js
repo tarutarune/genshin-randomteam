@@ -65,6 +65,9 @@ function playTick() {
   );
 }
 
+
+
+
 function playSuccess() {
 
 
@@ -118,8 +121,7 @@ let selectedCharacters =
     character => character.id
   );
 
-let remainingCharacters =
-  [...selectedCharacters];
+let initialSelectedCharacters = [];
 
 let currentTeam = [];
 
@@ -141,10 +143,12 @@ document.getElementById("save-button")
 
 
 
+
+
+
 function startTeamBuild() {
 
-  remainingCharacters = [...selectedCharacters];
-
+  initialSelectedCharacters = [...selectedCharacters];
   
   randomPool = [];
 
@@ -163,6 +167,11 @@ function startTeamBuild() {
       </div>
     `).join("");
 }
+
+
+
+
+
 
 function drawCharacter(slotIndex) {
 
@@ -191,7 +200,7 @@ function drawCharacter(slotIndex) {
 
 if (randomPool.length === 0) {
   randomPool =
-    [...remainingCharacters]
+    [...selectedCharacters]
       .sort(() => 0.5 - Math.random());
 }
   
@@ -301,10 +310,12 @@ playSuccess();
   `;
 }
 
-remainingCharacters =
-  remainingCharacters.filter(
+selectedCharacters =
+  selectedCharacters.filter(
     id => id !== finalCharacterId
   );
+
+saveSelectedCharacters();
 
 renderCharacters();
 
@@ -361,6 +372,8 @@ function saveSelectedCharacters() {
 
 
 
+
+
 function toggleCharacter(characterId) {
 
   if (selectedCharacters.includes(characterId)) {
@@ -373,8 +386,6 @@ function toggleCharacter(characterId) {
     selectedCharacters.push(characterId);
 
   }
-
-  remainingCharacters = [...selectedCharacters];
 
   renderCharacters();
   saveSelectedCharacters();
@@ -1001,14 +1012,15 @@ function fillRemainingTeam() {
   const needCount =
     8 - currentTeam.length;
 
-  const additionalMembers =
-    selectedCharacters
-      .filter(
-        id => !currentTeam.includes(id)
-      )
-      .sort(() => 0.5 - Math.random())
-      .slice(0, needCount);
+const additionalMembers =
+  initialSelectedCharacters
+    .filter(
+      id => !currentTeam.includes(id)
+    )
+    .sort(() => 0.5 - Math.random())
+    .slice(0, needCount);
 
+  
   randomPool.push(
     ...additionalMembers
   );
