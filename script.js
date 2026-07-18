@@ -143,6 +143,8 @@ document.getElementById("save-button")
 
 function startTeamBuild() {
 
+  remainingCharacters = [...selectedCharacters];
+
   randomPool = [];
 
   currentTeam = [];
