@@ -917,7 +917,7 @@ function renderRemainingInfo() {
 const remainingList =
   characters.filter(
     character =>
-      remainingCharacters.includes(character.id)
+      selectedCharacters.includes(character.id)
   );
 
   const fiveStars =
