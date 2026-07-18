@@ -65,6 +65,9 @@ function playTick() {
   );
 }
 
+
+
+
 function playSuccess() {
 
 
@@ -138,9 +141,10 @@ document.getElementById("save-button")
 
 
 
-function startTeamBuild() {
 
-  remainingCharacters = [...selectedCharacters];
+
+
+function startTeamBuild() {
 
   
   randomPool = [];
@@ -160,6 +164,11 @@ function startTeamBuild() {
       </div>
     `).join("");
 }
+
+
+
+
+
 
 function drawCharacter(slotIndex) {
 
@@ -188,7 +197,7 @@ function drawCharacter(slotIndex) {
 
 if (randomPool.length === 0) {
   randomPool =
-    [...remainingCharacters]
+    [...selectedCharacters]
       .sort(() => 0.5 - Math.random());
 }
   
