@@ -145,6 +145,7 @@ function startTeamBuild() {
 
   remainingCharacters = [...selectedCharacters];
 
+  
   randomPool = [];
 
   currentTeam = [];
@@ -300,12 +301,10 @@ playSuccess();
   `;
 }
 
-      selectedCharacters =
-  selectedCharacters.filter(
+remainingCharacters =
+  remainingCharacters.filter(
     id => id !== finalCharacterId
   );
-
-saveSelectedCharacters();
 
 renderCharacters();
 
@@ -915,22 +914,20 @@ function resetAll() {
 
 function renderRemainingInfo() {
 
-  const remainingCharacters =
-    characters.filter(
-      character =>
-        selectedCharacters.includes(
-          character.id
-        )
-    );
+const remainingList =
+  characters.filter(
+    character =>
+      remainingCharacters.includes(character.id)
+  );
 
   const fiveStars =
-    remainingCharacters.filter(
+    remainingList.filter(
       character =>
         character.rarity === 5
     ).length;
 
   const fourStars =
-    remainingCharacters.filter(
+    remainingList.filter(
       character =>
         character.rarity === 4
     ).length;
@@ -949,7 +946,7 @@ function renderRemainingInfo() {
     elements.map(element => {
 
       const count =
-        remainingCharacters.filter(
+        remainingList.filter(
           character =>
             character.element === element
         ).length;
