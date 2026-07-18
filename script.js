@@ -666,7 +666,8 @@ function saveTeam() {
   if (currentTeam.length === 0) return;
 
   const isLastTeam =
-  remainingCharacters.length === 0;
+  remainingCharacters.length === 0 &&
+  usedCharacters.length === selectedCharacters.length;
 
   if (typeof gtag !== "undefined") {
   gtag("event", "next_team");
@@ -698,11 +699,9 @@ document.getElementById(
   "save-button"
 ).disabled = true;
 
-// すべてのキャラを使い切ったら終了
-if (
-  remainingCharacters.length === 0 &&
-  currentTeam.length === 0
-) {
+if (isLastTeam) {
+
+  document.getElementById("message-area").innerHTML = "";
 
   document.getElementById("result").innerHTML = `
     <div class="complete-message">
@@ -714,7 +713,6 @@ if (
 }
 
 resetTeamSlots();
-
 renderCharacters();
 
   
