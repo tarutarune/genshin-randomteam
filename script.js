@@ -405,10 +405,11 @@ function renderCharacters() {
   document.getElementById("character-list").innerHTML =
     [...characters].reverse().map(character => {
 
-      const selected =
-        selectedCharacters.includes(character.id)
-          ? "selected"
-          : "";
+  const selected =
+    selectedCharacters.includes(character.id) &&
+    remainingCharacters.includes(character.id)
+      ? "selected"
+      : "";
 
       return `
         <div
