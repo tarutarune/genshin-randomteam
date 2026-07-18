@@ -150,6 +150,8 @@ document.getElementById("save-button")
 
 function startTeamBuild() {
 
+  console.trace("startTeamBuild");
+
   initialSelectedCharacters = [...selectedCharacters];
 
   remainingCharacters = [...selectedCharacters];
