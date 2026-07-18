@@ -861,6 +861,8 @@ function resetAndRandom() {
       character => character.id
     );
 
+  remainingCharacters = [...selectedCharacters];
+
   renderCharacters();
 
   renderHistory();
