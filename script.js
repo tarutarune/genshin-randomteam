@@ -970,6 +970,9 @@ function resetAll() {
   document.getElementById(
     "save-button"
   ).disabled = true;
+
+  startTeamBuild();
+  
 }
 
 
