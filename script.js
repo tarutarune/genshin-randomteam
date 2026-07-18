@@ -856,7 +856,7 @@ document
 
       event.preventDefault();
 
-      resetAll();
+      ();
     }
   );
   
@@ -967,8 +967,6 @@ function resetAll() {
   document.getElementById(
     "total-stars"
   ).textContent = "合計 ★0 / 0";
-
-  ();
 
   document.getElementById(
     "save-button"
