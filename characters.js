@@ -746,6 +746,17 @@ const characters = [
     image: "images/Sigewinne.png"
   },
 
+  
+  {
+    id: "sethos",
+    name: "セトス",
+    rarity: 4,
+    element: "雷",
+    weapon: "弓",
+    image: "images/Sethos.png"
+  },
+
+
   {
     id: "emilie",
     name: "エミリエ",
