@@ -149,9 +149,6 @@ document.getElementById("save-button")
 
 function resetTeamSlots() {
 
-  currentTeam = [];
-  currentSlot = 0;
-
   document.getElementById("result").innerHTML =
     [...Array(8)].map((_, index) => `
       <div
