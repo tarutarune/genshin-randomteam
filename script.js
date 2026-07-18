@@ -127,9 +127,6 @@ let remainingCharacters = [...selectedCharacters];
 
 let currentTeam = [];
 
-randomPool =
-  [...remainingCharacters]
-    .sort(() => 0.5 - Math.random());
 
 let currentSlot = 0;
 
@@ -157,10 +154,6 @@ function startTeamBuild() {
   initialSelectedCharacters = [...selectedCharacters];
 
   remainingCharacters = [...selectedCharacters];
-  
- randomPool =
-  [...remainingCharacters]
-    .sort(() => 0.5 - Math.random());
 
   currentTeam = [];
 
@@ -210,13 +203,18 @@ function drawCharacter(slotIndex) {
   return;
 } 
 
-console.log("remaining", remainingCharacters);
-console.log("randomPool", randomPool);
-  
+const randomIndex = Math.floor(
+  Math.random() * remainingCharacters.length
+);
+
 const finalCharacterId =
-  randomPool.shift();
+  remainingCharacters[randomIndex];
 
 if (!finalCharacterId) return;
+
+// 抽選済みとして取り除く
+remainingCharacters.splice(randomIndex, 1);
+  
 
   if (typeof gtag !== "undefined") {
   gtag("event", "draw_character");
@@ -299,17 +297,13 @@ playTick();
 
 playSuccess();
 
-remainingCharacters =
-  remainingCharacters.filter(
-    id => id !== finalCharacterId
-  );
 
 renderCharacters();
       
 
-      if (
+if (
   currentTeam.length < 8 &&
-  randomPool.length === 0
+  remainingCharacters.length === 0
 ) {
 
   const needCount =
@@ -1024,27 +1018,18 @@ document.getElementById(
 
 function fillRemainingTeam() {
 
-  const needCount =
-    8 - currentTeam.length;
-
-const additionalMembers =
-  initialSelectedCharacters
-    .filter(
+  remainingCharacters =
+    initialSelectedCharacters.filter(
       id => !currentTeam.includes(id)
-    )
-    .sort(() => 0.5 - Math.random())
-    .slice(0, needCount);
+    );
 
-  
-  randomPool.push(
-    ...additionalMembers
-  );
-
-  isDrawing = false;
-  
   document.getElementById(
     "message-area"
   ).innerHTML = "";
+
+  isDrawing = false;
+
+  renderCharacters();
 }
 
 
