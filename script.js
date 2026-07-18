@@ -148,8 +148,11 @@ document.getElementById("save-button")
 
 
 function startTeamBuild() {
+  
 
   console.trace("startTeamBuild");
+
+ console.log("startTeamBuild実行");
 
   initialSelectedCharacters = [...selectedCharacters];
 
