@@ -314,12 +314,10 @@ playSuccess();
   `;
 }
 
-selectedCharacters =
-  selectedCharacters.filter(
+remainingCharacters =
+  remainingCharacters.filter(
     id => id !== finalCharacterId
   );
-
-saveSelectedCharacters();
 
 renderCharacters();
 
