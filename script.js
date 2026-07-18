@@ -204,7 +204,7 @@ function drawCharacter(slotIndex) {
 
 if (randomPool.length === 0) {
   randomPool =
-    [...selectedCharacters]
+    [...remainingCharacters]
       .sort(() => 0.5 - Math.random());
 }
   
