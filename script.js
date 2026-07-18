@@ -123,7 +123,7 @@ let selectedCharacters =
 
 let initialSelectedCharacters = [];
 
-let remainingCharacters = [];
+let remainingCharacters = [...selectedCharacters];
 
 let currentTeam = [];
 
@@ -170,6 +170,8 @@ function startTeamBuild() {
         ✦
       </div>
     `).join("");
+
+  renderCharacters();
 }
 
 
@@ -913,8 +915,6 @@ function resetAll() {
   localStorage.removeItem(
     "selectedCharacters"
   );
-
-  renderCharacters();
 
   renderHistory();
 
