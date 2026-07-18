@@ -1152,8 +1152,18 @@ h2 {
 
 .complete-message {
   width: 100%;
+  max-width: 600px;
+  margin: 60px auto;
+
   text-align: center;
-  font-size: 28px;
+
+  font-size: 2rem;
   font-weight: bold;
-  margin: 40px 0;
+  line-height: 1.6;
+
+  white-space: normal;
+  word-break: keep-all;
+
+  margin:auto;
+
 }
