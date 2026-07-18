@@ -298,6 +298,13 @@ playTick();
         finalCharacterId
       );
 
+   console.log(
+  "抽選後",
+  currentTeam.length,
+  remainingCharacters.length,
+  [...remainingCharacters]
+);
+
 playSuccess();
 
 
@@ -938,6 +945,12 @@ function resetAll() {
 
 
 function renderRemainingInfo() {
+
+  console.log(
+  "renderRemainingInfo",
+  remainingCharacters.length,
+  [...remainingCharacters]
+);
 
 const remainingList =
   characters.filter(
