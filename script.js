@@ -1072,83 +1072,16 @@ document.getElementById(
 
 function fillRemainingTeam() {
 
-  console.log(
-  "usedCharacters",
-  usedCharacters.length,
-  [...usedCharacters]
-);
-
-console.log(
-  "currentTeam",
-  currentTeam.length,
-  [...currentTeam]
-);
-
-  // 補充対象を作る（現在の組にいるキャラは除外）
+  // 現在の組にいないキャラだけ再抽選可能にする
   remainingCharacters = usedCharacters.filter(
     id => !currentTeam.includes(id)
   );
 
-  console.log(
-  "補充候補",
-  remainingCharacters.length,
-  [...remainingCharacters]
-);
-
+  // 補充ボタンを消す
   document.getElementById("message-area").innerHTML = "";
 
-  // 空いている枠を取得
-  const emptySlots = [];
-
-  for (let slotIndex = 0; slotIndex < 8; slotIndex++) {
-
-    const slot = document.querySelector(
-      `[data-slot="${slotIndex}"]`
-    );
-
-    if (
-      slot &&
-      slot.dataset.locked !== "true"
-    ) {
-      emptySlots.push(slotIndex);
-    }
-  }
-
-  // 1人ずつ抽選する
-  function drawNext() {
-
-    if (emptySlots.length === 0) {
-      return;
-    }
-
-    const slotIndex = emptySlots.shift();
-
-    console.log(
-  "補充開始",
-  slotIndex,
-  remainingCharacters.length,
-  [...remainingCharacters]
-);
-
-    drawCharacter(slotIndex);
-
-    // アニメーション終了待ち
-    const timer = setInterval(() => {
-
-      if (!isDrawing) {
-
-        clearInterval(timer);
-
-        drawNext();
-
-      }
-
-    }, 50);
-
-  }
-
-  drawNext();
-
+  // キャラ一覧のグレーアウトを更新
+  renderCharacters();
 }
 
 
