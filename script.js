@@ -1034,6 +1034,8 @@ document.getElementById(
 
 function fillRemainingTeam() {
 
+  console.log("initialSelectedCharacters", initialSelectedCharacters.length, initialSelectedCharacters);
+
   remainingCharacters =
     initialSelectedCharacters.filter(
       id => !currentTeam.includes(id)
