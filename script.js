@@ -193,6 +193,12 @@ function startTeamBuild() {
 
 function drawCharacter(slotIndex) {
 
+  console.log(
+  "drawCharacter",
+  slotIndex,
+  isDrawing
+);
+
   if (isDrawing) return;
 
   
@@ -1089,6 +1095,13 @@ function fillRemainingTeam() {
     }
 
     const slotIndex = emptySlots.shift();
+
+    console.log(
+  "補充開始",
+  slotIndex,
+  remainingCharacters.length,
+  [...remainingCharacters]
+);
 
     drawCharacter(slotIndex);
 
