@@ -125,6 +125,9 @@ let initialSelectedCharacters = [];
 
 let remainingCharacters = [...selectedCharacters];
 
+// これまでの組で使い切ったキャラ
+let usedCharacters = [];
+
 let currentTeam = [];
 
 
@@ -164,6 +167,7 @@ function startTeamBuild() {
 
   remainingCharacters = [...selectedCharacters];
 
+  usedCharacters = [];
   currentTeam = [];
 
   currentSlot = 0;
@@ -223,6 +227,11 @@ if (!finalCharacterId) return;
 
 // 抽選済みとして取り除く
 remainingCharacters.splice(randomIndex, 1);
+
+// 一度使い切ったキャラとして記録
+if (!usedCharacters.includes(finalCharacterId)) {
+    usedCharacters.push(finalCharacterId);
+}
   
 
   if (typeof gtag !== "undefined") {
@@ -1048,20 +1057,23 @@ document.getElementById(
 
 function fillRemainingTeam() {
 
-  console.log("initialSelectedCharacters", initialSelectedCharacters.length, initialSelectedCharacters);
+  const need = teamSize - currentTeam.length;
 
-remainingCharacters =
-  selectedCharacters.filter(
-    id => !currentTeam.includes(id)
+  remainingCharacters = usedCharacters.filter(
+    id =>
+      !currentTeam.includes(id) &&
+      !remainingCharacters.includes(id)
   );
 
-  document.getElementById(
-    "message-area"
-  ).innerHTML = "";
+  document.getElementById("message-area").innerHTML = "";
 
   isDrawing = false;
 
   renderCharacters();
+
+  for (let i = 0; i < need; i++) {
+    drawCharacter();
+  }
 }
 
 
