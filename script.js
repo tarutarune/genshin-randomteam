@@ -1025,6 +1025,8 @@ const additionalMembers =
     ...additionalMembers
   );
 
+  isDrawing = false;
+  
   document.getElementById(
     "message-area"
   ).innerHTML = "";
