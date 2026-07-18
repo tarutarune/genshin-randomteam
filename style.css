@@ -1150,3 +1150,10 @@ h2 {
 }
 
 
+.complete-message {
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 40px 0;
+}
