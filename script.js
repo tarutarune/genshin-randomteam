@@ -204,7 +204,10 @@ function drawCharacter(slotIndex) {
   return;
 } 
 
-if (randomPool.length === 0) {
+if (
+  randomPool.length === 0 &&
+  remainingCharacters.length > 8 - currentTeam.length
+) {
   randomPool =
     [...remainingCharacters]
       .sort(() => 0.5 - Math.random());
