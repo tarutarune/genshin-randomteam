@@ -158,7 +158,9 @@ function startTeamBuild() {
 
   remainingCharacters = [...selectedCharacters];
   
-  randomPool = [];
+ randomPool =
+  [...remainingCharacters]
+    .sort(() => 0.5 - Math.random());
 
   currentTeam = [];
 
