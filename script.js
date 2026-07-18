@@ -374,6 +374,8 @@ function toggleCharacter(characterId) {
 
   }
 
+  remainingCharacters = [...selectedCharacters];
+
   renderCharacters();
   saveSelectedCharacters();
 
