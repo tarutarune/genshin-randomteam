@@ -665,6 +665,9 @@ function saveTeam() {
 
   if (currentTeam.length === 0) return;
 
+  const isLastTeam =
+  remainingCharacters.length === 0;
+
   if (typeof gtag !== "undefined") {
   gtag("event", "next_team");
 }
@@ -694,6 +697,21 @@ historyCount.classList.add("history-pulse");
 document.getElementById(
   "save-button"
 ).disabled = true;
+
+// すべてのキャラを使い切ったら終了
+if (
+  remainingCharacters.length === 0 &&
+  currentTeam.length === 0
+) {
+
+  document.getElementById("result").innerHTML = `
+    <div class="complete-message">
+      🎉 全キャラの抽選が完了しました！
+    </div>
+  `;
+
+  return;
+}
 
 resetTeamSlots();
 
