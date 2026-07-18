@@ -123,6 +123,8 @@ let selectedCharacters =
 
 let initialSelectedCharacters = [];
 
+let remainingCharacters = [];
+
 let currentTeam = [];
 
 let randomPool = [];
@@ -149,6 +151,8 @@ document.getElementById("save-button")
 function startTeamBuild() {
 
   initialSelectedCharacters = [...selectedCharacters];
+
+  remainingCharacters = [...selectedCharacters];
   
   randomPool = [];
 
