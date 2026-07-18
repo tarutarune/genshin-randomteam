@@ -145,6 +145,7 @@ function startTeamBuild() {
 
   remainingCharacters = [...selectedCharacters];
 
+  
   randomPool = [];
 
   currentTeam = [];
