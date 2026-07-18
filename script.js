@@ -855,6 +855,8 @@ document
     event => {
 
       event.preventDefault();
+      
+      resetAll();
 
     }
   );
