@@ -127,7 +127,9 @@ let remainingCharacters = [...selectedCharacters];
 
 let currentTeam = [];
 
-let randomPool = [];
+randomPool =
+  [...remainingCharacters]
+    .sort(() => 0.5 - Math.random());
 
 let currentSlot = 0;
 
@@ -208,12 +210,6 @@ function drawCharacter(slotIndex) {
 
 console.log("remaining", remainingCharacters);
 console.log("randomPool", randomPool);
-  
-if (randomPool.length === 0) {
-  randomPool =
-    [...remainingCharacters]
-      .sort(() => 0.5 - Math.random());
-}
   
 const finalCharacterId =
   randomPool.shift();
