@@ -949,6 +949,9 @@ function resetAll() {
 
   currentTeam = [];
 
+  remainingCharacters = [...selectedCharacters];
+usedCharacters = [];
+
   localStorage.removeItem(
     "teamHistory"
   );
