@@ -130,6 +130,7 @@ let usedCharacters = [];
 
 let currentTeam = [];
 
+let isFinalRound = false;
 
 let currentSlot = 0;
 
@@ -172,8 +173,9 @@ function resetTeamSlots() {
 
 
 function startTeamBuild() {
-  
 
+  isFinalRound = false;
+  
   console.trace("startTeamBuild");
 
  console.log("startTeamBuild実行");
@@ -699,7 +701,7 @@ document.getElementById(
   "save-button"
 ).disabled = true;
 
-if (isLastTeam) {
+if (isFinalRound) {
 
   document.getElementById("message-area").innerHTML = "";
 
@@ -1087,6 +1089,8 @@ document.getElementById(
 
 
 function fillRemainingTeam() {
+
+  isFinalRound = true;
 
   // 現在の組にいないキャラだけ再抽選可能にする
   remainingCharacters = usedCharacters.filter(
