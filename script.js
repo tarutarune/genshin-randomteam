@@ -1063,10 +1063,28 @@ document.getElementById(
 
 function fillRemainingTeam() {
 
+  console.log(
+  "usedCharacters",
+  usedCharacters.length,
+  [...usedCharacters]
+);
+
+console.log(
+  "currentTeam",
+  currentTeam.length,
+  [...currentTeam]
+);
+
   // 補充対象を作る（現在の組にいるキャラは除外）
   remainingCharacters = usedCharacters.filter(
     id => !currentTeam.includes(id)
   );
+
+  console.log(
+  "補充候補",
+  remainingCharacters.length,
+  [...remainingCharacters]
+);
 
   document.getElementById("message-area").innerHTML = "";
 
