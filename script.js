@@ -204,10 +204,10 @@ function drawCharacter(slotIndex) {
   return;
 } 
 
-if (
-  randomPool.length === 0 &&
-  remainingCharacters.length > 8 - currentTeam.length
-) {
+console.log("remaining", remainingCharacters);
+console.log("randomPool", randomPool);
+  
+if (randomPool.length === 0) {
   randomPool =
     [...remainingCharacters]
       .sort(() => 0.5 - Math.random());
@@ -299,6 +299,14 @@ playTick();
 
 playSuccess();
 
+remainingCharacters =
+  remainingCharacters.filter(
+    id => id !== finalCharacterId
+  );
+
+renderCharacters();
+      
+
       if (
   currentTeam.length < 8 &&
   randomPool.length === 0
@@ -319,12 +327,6 @@ playSuccess();
   `;
 }
 
-remainingCharacters =
-  remainingCharacters.filter(
-    id => id !== finalCharacterId
-  );
-
-renderCharacters();
 
       // 8人揃ったら保存ボタン解放
       if (
