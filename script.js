@@ -1057,23 +1057,58 @@ document.getElementById(
 
 function fillRemainingTeam() {
 
-  const need = teamSize - currentTeam.length;
-
+  // 補充対象を作る（現在の組にいるキャラは除外）
   remainingCharacters = usedCharacters.filter(
-    id =>
-      !currentTeam.includes(id) &&
-      !remainingCharacters.includes(id)
+    id => !currentTeam.includes(id)
   );
 
   document.getElementById("message-area").innerHTML = "";
 
-  isDrawing = false;
+  // 空いている枠を取得
+  const emptySlots = [];
 
-  renderCharacters();
+  for (let slotIndex = 0; slotIndex < 8; slotIndex++) {
 
-  for (let i = 0; i < need; i++) {
-    drawCharacter();
+    const slot = document.querySelector(
+      `[data-slot="${slotIndex}"]`
+    );
+
+    if (
+      slot &&
+      slot.dataset.locked !== "true"
+    ) {
+      emptySlots.push(slotIndex);
+    }
   }
+
+  // 1人ずつ抽選する
+  function drawNext() {
+
+    if (emptySlots.length === 0) {
+      return;
+    }
+
+    const slotIndex = emptySlots.shift();
+
+    drawCharacter(slotIndex);
+
+    // アニメーション終了待ち
+    const timer = setInterval(() => {
+
+      if (!isDrawing) {
+
+        clearInterval(timer);
+
+        drawNext();
+
+      }
+
+    }, 50);
+
+  }
+
+  drawNext();
+
 }
 
 
