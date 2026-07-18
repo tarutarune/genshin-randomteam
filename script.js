@@ -383,9 +383,14 @@ function toggleCharacter(characterId) {
     selectedCharacters =
       selectedCharacters.filter(id => id !== characterId);
 
+    remainingCharacters =
+  remainingCharacters.filter(id => id !== characterId);
+
   } else {
 
     selectedCharacters.push(characterId);
+
+    remainingCharacters.push(characterId);
 
   }
 
