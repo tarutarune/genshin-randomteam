@@ -1002,16 +1002,12 @@ function fillRemainingTeam() {
     8 - currentTeam.length;
 
   const additionalMembers =
-    characters
+    selectedCharacters
       .filter(
-        character =>
-          !currentTeam.includes(
-            character.id
-          )
+        id => !currentTeam.includes(id)
       )
       .sort(() => 0.5 - Math.random())
-      .slice(0, needCount)
-      .map(character => character.id);
+      .slice(0, needCount);
 
   randomPool.push(
     ...additionalMembers
@@ -1021,6 +1017,8 @@ function fillRemainingTeam() {
     "message-area"
   ).innerHTML = "";
 }
+
+
 
 window.fillRemainingTeam =
   fillRemainingTeam;
