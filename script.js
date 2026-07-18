@@ -147,6 +147,30 @@ document.getElementById("save-button")
 
 
 
+function resetTeamSlots() {
+
+  currentTeam = [];
+  currentSlot = 0;
+
+  document.getElementById("result").innerHTML =
+    [...Array(8)].map((_, index) => `
+      <div
+        class="empty-slot"
+        data-slot="${index}"
+        onclick="drawCharacter(${index})"
+      >
+        ✦
+      </div>
+    `).join("");
+
+  document.getElementById(
+    "save-button"
+  ).disabled = true;
+
+}
+
+
+
 
 
 
@@ -168,22 +192,9 @@ function startTeamBuild() {
   remainingCharacters = [...selectedCharacters];
 
   usedCharacters = [];
-  currentTeam = [];
+  resetTeamSlots();
 
-  currentSlot = 0;
-
-  document.getElementById("result").innerHTML =
-    [...Array(8)].map((_, index) => `
-      <div
-        class="empty-slot"
-        data-slot="${index}"
-        onclick="drawCharacter(${index})"
-      >
-        ✦
-      </div>
-    `).join("");
-
-  renderCharacters();
+renderCharacters();
 }
 
 
@@ -668,13 +679,7 @@ function saveTeam() {
 
 saveHistory();
 
-
-
-
-
   currentTeam = [];
-
-
 
   renderCharacters();
 
@@ -693,13 +698,17 @@ document.getElementById(
   "save-button"
 ).disabled = true;
 
-  currentTeam = [];
-currentSlot = 0;
+resetTeamSlots();
 
-startTeamBuild();
+renderCharacters();
+
+();
 
   
 }
+
+
+
 
 function renderHistory() {
 
@@ -964,7 +973,7 @@ function resetAll() {
     "total-stars"
   ).textContent = "合計 ★0 / 0";
 
-  startTeamBuild();
+  ();
 
   document.getElementById(
     "save-button"
