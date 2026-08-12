@@ -1052,16 +1052,15 @@ const characters = [
     element: "氷",
     weapon: "両手剣",
     image: "images/Sandrone.png"
-  }
-  
-    {
+  },
+  {
     id: "Alyosha",
     name: "アリョーシャ",
     rarity: 4,
     element: "雷",
     weapon: "長柄武器",
     image: "images/Alyosha.png"
-  }
+  },
 
     {
     id: "Odette",
