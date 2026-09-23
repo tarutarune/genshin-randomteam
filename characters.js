@@ -1070,5 +1070,23 @@ const characters = [
     element: "氷",
     weapon: "片手剣",
     image: "images/Odette.png"
+  },
+
+   {
+    id: "Vesna",
+    name: "ヴェスナ",
+    rarity: 5,
+    element: "風",
+    weapon: "片手剣",
+    image: "images/Vesna.png"
+  },
+
+   {
+    id: "Vodyanitsa",
+    name: "ヴォジャニーツァ",
+    rarity: 5,
+    element: "水",
+    weapon: "法器",
+    image: "images/Vodyanitsa.png"
   }
 ];
