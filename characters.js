@@ -1091,22 +1091,20 @@ const characters = [
    },
 
      {
-    id: "Mytya",
-    name: "ミティア",
-    rarity: 5,
-    element: "雷",
-    weapon: "法器",
-    image: "images/Mytya.png"
-  },
-
-     {
     id: "Valeriy",
     name: "バレリー",
     rarity: 4,
     element: "雷",
     weapon: "片手剣",
     image: "images/Valeriy.png"
+  },
+       {
+    id: "Mytya",
+    name: "ミティア",
+    rarity: 5,
+    element: "雷",
+    weapon: "法器",
+    image: "images/Mytya.png"
   }
-
   
 ];
